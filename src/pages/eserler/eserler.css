@@ -1,0 +1,187 @@
+/* Ana Kapsayıcı */
+.eserler-kapsayici {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 5%; /* Mobilde daha esnek boşluk */
+  background-color: #000;
+}
+
+.eserler-ust-alan { 
+  text-align: center; 
+  margin-bottom: 60px; 
+}
+
+.eserler-ust-alan h1 { 
+  font-size: clamp(2.2rem, 8vw, 3.5rem); 
+  color: #fff; 
+  letter-spacing: -2px; 
+}
+
+.eserler-ust-alan p { 
+  color: #666; 
+  margin-top: 10px; 
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.bolum-basligi {
+  color: #fff; 
+  font-size: clamp(1rem, 3vw, 1.2rem); 
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  margin-bottom: 30px; 
+  border-left: 4px solid #fff; 
+  padding-left: 15px;
+}
+
+/* Video Tasarımı */
+.video-izgara { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 25px; 
+  margin-bottom: 80px; 
+}
+
+.video-kart { 
+  background: #0a0a0a; 
+  border: 1px solid #1a1a1a; 
+  border-radius: 15px; 
+  overflow: hidden; 
+}
+
+.iframe-kapsayici { 
+  position: relative; 
+  padding-bottom: 56.25%; /* 16:9 Oranı */
+  height: 0; 
+}
+
+.iframe-kapsayici iframe { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+}
+
+.video-bilgi { 
+  padding: 15px; 
+  text-align: center; 
+  color: #888; 
+  font-size: 0.95rem;
+}
+
+/* Kitap Tasarımı */
+.kitaplar-bolumu { margin-bottom: 80px; }
+
+.kitap-izgara { 
+  display: grid; 
+  /* Mobilde 2 sütun, tablette 3, masaüstünde 4 sütun */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+  gap: 25px; 
+}
+
+.kitap-kart h3 { 
+  color: #fff; 
+  font-size: 0.9rem; 
+  margin-top: 15px; 
+  text-align: center; 
+  font-weight: 500; 
+  line-height: 1.4;
+}
+
+.kitap-kapak { 
+  aspect-ratio: 2 / 3; 
+  background: #0a0a0a; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  border: 1px solid #222; 
+  transition: 0.3s ease; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.kitap-kapak img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+.kitap-kapak:hover { transform: translateY(-8px); border-color: #555; }
+
+.kitap-yok-kapak {
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
+  padding: 15px; 
+  background: #111; 
+  color: #444;
+}
+
+/* Foto Arşivi */
+.foto-izgara { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+  gap: 15px; 
+}
+
+/* Masaüstünde fotoğraflar biraz daha büyük olsun */
+@media (min-width: 768px) {
+  .foto-izgara { 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px;
+  }
+}
+
+.foto-cerceve { 
+  aspect-ratio: 1 / 1; 
+  background: #111; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  border: 1px solid #222; 
+  cursor: pointer; 
+}
+
+.foto-cerceve img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.foto-cerceve:hover img { transform: scale(1.1); }
+
+/* Lightbox */
+.lightbox-overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.95); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 2000; 
+}
+
+.lightbox-icerik { position: relative; width: 90%; max-width: 800px; display: flex; justify-content: center; }
+.lightbox-icerik img { max-width: 100%; max-height: 85vh; border-radius: 5px; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
+
+.kapat-btn { 
+  position: absolute; 
+  top: -50px; 
+  right: 0; 
+  background: none; 
+  border: none; 
+  color: #fff; 
+  font-size: 35px; 
+  cursor: pointer; 
+}
+
+/* --- MOBİL ÖZEL AYARLAR --- */
+@media (max-width: 600px) {
+  .video-izgara {
+    grid-template-columns: 1fr; /* Videolar tek sütun */
+  }
+
+  .kitap-izgara {
+    grid-template-columns: repeat(2, 1fr); /* Kitaplar yan yana 2 tane */
+    gap: 15px;
+  }
+
+  .foto-izgara {
+    grid-template-columns: repeat(2, 1fr); /* Fotoğraflar yan yana 2 tane */
+    gap: 10px;
+  }
+}

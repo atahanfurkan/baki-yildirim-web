@@ -1,0 +1,144 @@
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden; /* Taşmaları önlemek için */
+}
+
+.zaman-akisi-kapsayici {
+  max-width: 900px;
+  width: 90%;
+  margin: 60px auto;
+  padding-bottom: 100px;
+}
+
+.zaman-baslik-alani {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.zaman-baslik-alani h1 {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.zaman-baslik-alani p {
+  color: #888;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  line-height: 1.5;
+}
+
+/* Ana Çizgi */
+.dikey-hat {
+  position: relative;
+  border-left: 2px solid #222;
+  margin-left: 30px; /* Bilgisayarda geniş boşluk */
+  padding-left: 50px;
+}
+
+/* Her Durak */
+.durak-noktasi {
+  position: relative;
+  margin-bottom: 60px;
+  transition: transform 0.3s ease;
+}
+
+.durak-noktasi:hover {
+  transform: translateX(5px);
+}
+
+/* Çizgi Üzerindeki Parlayan Noktalar */
+.durak-noktasi::before {
+  content: "";
+  position: absolute;
+  left: -59px; /* Çizgiyle tam hizalama */
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 4px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}
+
+.tarih-etiketi {
+  font-weight: bold;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: #fff;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.durak-icerik {
+  background: rgba(255, 255, 255, 0.03);
+  padding: clamp(15px, 4vw, 25px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px); /* Hafif modern cam efekti */
+}
+
+.durak-icerik h3 {
+  color: #eee;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 10px;
+}
+
+.durak-icerik p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  text-align: left;
+}
+
+/* --- RESPONSIVE DÜZENLEMELER --- */
+
+/* Tablet (768px altı) */
+@media (max-width: 768px) {
+  .dikey-hat {
+    margin-left: 15px; /* Çizgiyi kenara yaklaştır */
+    padding-left: 35px;
+  }
+  
+  .durak-noktasi::before {
+    left: -44px; /* Mobilde çizgiyi takip etmesi için */
+    width: 14px;
+    height: 14px;
+  }
+
+  .zaman-baslik-alani {
+    margin-bottom: 50px;
+  }
+}
+
+/* Küçük Telefonlar (480px altı) */
+@media (max-width: 480px) {
+  .zaman-akisi-kapsayici {
+    width: 95%;
+    margin-top: 40px;
+  }
+
+  .dikey-hat {
+    margin-left: 10px;
+    padding-left: 25px;
+  }
+
+  .durak-noktasi::before {
+    left: -38px; /* Çok küçük ekranlarda ince ayar */
+    width: 12px;
+    height: 12px;
+    top: 5px;
+  }
+
+  .durak-icerik {
+    padding: 15px;
+  }
+
+  .durak-noktasi {
+    margin-bottom: 40px;
+  }
+}

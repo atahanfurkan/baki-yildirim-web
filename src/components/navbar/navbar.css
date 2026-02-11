@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background-color: rgba(0, 0, 0, 0.6); /* Biraz daha koyulaştırdık ki mobilde okunabilsin */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 1001; /* Mobilde logonun üstte kalması için */
+}
+
+.nav-logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* --- HAMBURGER İKONU STİLLERİ --- */
+.hamburger {
+  display: none; /* Bilgisayarda gizle */
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+/* --- MOBİL UYUMLULUK (992px Altı) --- */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .hamburger {
+    display: block; /* Mobilde göster */
+  }
+
+  /* Hamburger animasyonu (X şekline dönüşme) */
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .nav-links {
+    position: fixed;
+    left: -100%; /* Menüyü ekranın dışında sakla */
+    top: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    transition: 0.4s;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .nav-links.active {
+    left: 0; /* Menüyü içeri kaydır */
+  }
+
+  .nav-links a {
+    font-size: 1.2rem; /* Mobilde daha büyük tık alanları */
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 1.1rem; /* Küçük telefonlarda logo taşmasın */
+  }
+}

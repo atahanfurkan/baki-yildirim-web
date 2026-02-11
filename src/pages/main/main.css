@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg-primary: #000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d0d0d0;
+  --color-text-muted: #888;
+  --transition-smooth: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+.tüm {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 5%; /* Mobilde daha iyi boşluk */
+  position: relative;
+}
+
+.hero {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+}
+
+.hero.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fotoğraf Alanı */
+.resim-konteyner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.baslik-ana {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.altyazi-cizgi {
+  width: 60px;
+  height: 2px;
+  background: #444;
+}
+
+.foto-wrapper {
+  width: 100%;
+}
+
+.foto {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.foto-alt-yazi {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: 15px;
+  border-left: 2px solid #333;
+  font-style: italic;
+}
+
+/* Tanıtım Alanı */
+.tanitim {
+  flex: 1;
+  max-width: 500px;
+}
+
+.tanitim-metin {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 30px;
+}
+
+.bilgi-kartlar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kart {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  transition: var(--transition-smooth);
+}
+
+.kart:hover {
+  border-color: #444;
+  background: #161616;
+}
+
+.kart h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.kart p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Şiir Kartı */
+.kart-siir {
+  background: #0a0a0a;
+  border: 1px solid #333;
+}
+
+.siir-baslik {
+  color: #fff;
+  border-bottom: 1px solid #222;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.siir {
+  font-family: 'Inter', sans-serif;
+  white-space: pre-line;
+  line-height: 1.7;
+  color: #eee;
+  font-size: 1.05rem;
+}
+
+/* RESPONSIVE DÜZENLEMELER */
+
+/* Tablet ve Küçük Laptop (1024px altı) */
+@media (max-width: 1024px) {
+  .hero {
+    gap: 40px;
+  }
+}
+
+/* Mobil Görünüm (900px altı) */
+@media (max-width: 900px) {
+  .tüm {
+    padding: 40px 20px;
+    align-items: flex-start;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .resim-konteyner {
+    align-items: center;
+    width: 100%;
+  }
+
+  .foto-alt-yazi {
+    border-left: none;
+    border-top: 2px solid #333;
+    padding: 15px 0;
+    max-width: 100%;
+  }
+
+  .tanitim {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .altyazi-cizgi {
+    margin: 0 auto;
+  }
+}
+
+/* Küçük Telefonlar (480px altı) */
+@media (max-width: 480px) {
+  .baslik-ana {
+    font-size: 2.2rem;
+  }
+  
+  .siir {
+    font-size: 0.95rem; /* Küçük ekranda şiir taşmasın */
+  }
+}

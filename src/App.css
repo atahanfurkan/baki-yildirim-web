@@ -1,0 +1,35 @@
+/* 1. Tüm tarayıcı boşluklarını sıfırla */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Ana gövde ayarları - height: 100% kısımlarını kaldırıyoruz */
+html, body, #root {
+  width: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  /* height: 100% sildik, çünkü sayfanın doğal boyuna ulaşması lazım */
+}
+
+/* 3. App bileşenini serbest bırak */
+.App {
+  width: 100%;
+  min-height: 100vh; /* Sabit 100vh değil, "en az" 100vh olsun dedik */
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+.page-container {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px); /* Ekran boyundan navbar payını çıkar */
+  width: 100%;
+  max-width: 100vw;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
