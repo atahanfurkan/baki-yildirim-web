@@ -30,10 +30,10 @@ const Navbar = () => {
       {/* Menü Linkleri */}
       <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
         <li><Link to="/" onClick={closeMenu}>Ana Sayfa</Link></li>
-        <li><Link to="/hakkinda" onClick={closeMenu}>Hakkında</Link></li>
-        <li><Link to="/zaman-cizelgesi" onClick={closeMenu}>Zaman Çizelgesi</Link></li>
-        <li><Link to="/galeri" onClick={closeMenu}>Galeri / Eserler</Link></li>
-        <li><Link to="/iletisim" onClick={closeMenu}>İletişim</Link></li>
+        <li><Link to="/hakkinda" onClick={closeMenu}>HAKKINDA</Link></li>
+        <li><Link to="/zaman-cizelgesi" onClick={closeMenu}>ZAMAN ÇİZELGESİ</Link></li>
+        <li><Link to="/galeri" onClick={closeMenu}>GALERİ / ESERLER</Link></li>
+        <li><Link to="/iletisim" onClick={closeMenu}>İLETİŞİM</Link></li>
       </ul>
     </nav>
   );
