@@ -1,16 +1,20 @@
-# React + Vite
+Baki Yıldırım - Biyografi Sitesi 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proje Hakkında
+Bu proje, dedem **Baki Yıldırım** için hazırladığım, onun hayat hikayesini ve anılarını dijital dünyada ölümsüzleştirmeyi amaçlayan bir web sitesidir.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+Kullanılan Teknolojiler
+- Framework: React / Vite 
+- Styling: CSS 
+- Deployment: Netlify
+- Domain: [bakiyildirim.com](https://bakiyildirim.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Özellikler
+- Responsive Tasarım: Tüm cihazlarda (Telefon, Tablet, PC) kusursuz görünüm.
+- Performans: Netlify üzerinde yüksek hızda çalışma.
+- Özgün İçerik:*Aile arşivinden derlenen özel bilgiler.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+Bu proje, Atahan Furkan Yıldırım tarafından geliştirilmiştir.
