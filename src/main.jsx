@@ -5,13 +5,16 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ReactGA from "react-ga4"
 
-// Google Analytics'i senin kimliğinle başlatıyoruz
-ReactGA.initialize("G-10SS18K0BW");
-
 const RootComponent = () => {
   useEffect(() => {
-    // Sayfa ilk yüklendiğinde ve değiştikçe Google'a haber ver
+    // 1. Google Analytics'i burada başlatıyoruz
+    ReactGA.initialize("G-10SS18K0BW");
+    
+    // 2. Sayfa görüntülendiğini zorla gönderiyoruz
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    
+    // Test için konsola yazı yazdıralım (F12'de göreceğiz)
+    console.log("Google Analytics Başlatıldı ve Sinyal Gönderildi!");
   }, []);
 
   return (
