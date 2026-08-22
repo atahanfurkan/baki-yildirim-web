@@ -1,28 +1,71 @@
 .scroll-to-top {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 9999;
+
+  right: 28px;
+  bottom: 28px;
+
+  z-index: 3000;
 }
 
 .scroll-btn {
-  width: 50px;
-  height: 50px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(180, 154, 106, 0.45);
+
+  border-radius: 0;
+
+  background:
+    rgba(13, 13, 12, 0.88);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  color: var(--accent);
+
+  font-size: 0.85rem;
+
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  /* İkonun boyutunu buradan ayarlayabilirsin */
-  font-size: 20px; 
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .scroll-btn:hover {
-  transform: translateY(-7px); /* Biraz daha fazla zıplasın */
-  background-color: #f8f8f8;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+  transform:
+    translateY(-4px);
+
+  border-color: var(--accent);
+
+  background: var(--accent);
+
+  color: #11100e;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 650px) {
+
+  .scroll-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .scroll-btn {
+    width: 42px;
+    height: 42px;
+  }
 }

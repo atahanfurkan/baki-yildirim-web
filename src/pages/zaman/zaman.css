@@ -1,144 +1,786 @@
-.page-container {
+.timeline-page {
   width: 100%;
-  min-height: 100vh;
-  background-color: #000;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.timeline-container {
+  width: min(
+    calc(100% - 64px),
+    var(--container)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.timeline-hero {
+  min-height: 100svh;
+
+  padding:
+    145px
+    0
+    90px;
+
   display: flex;
-  justify-content: center;
-  overflow-x: hidden; /* Taşmaları önlemek için */
+  align-items: center;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(180, 154, 106, 0.09),
+      transparent 32rem
+    );
 }
 
-.zaman-akisi-kapsayici {
-  max-width: 900px;
-  width: 90%;
-  margin: 60px auto;
-  padding-bottom: 100px;
+.timeline-hero-meta {
+  display: grid;
+
+  grid-template-columns:
+    80px
+    1fr;
+
+  gap: 30px;
+
+  align-items: center;
+
+  font-size: 0.67rem;
+  font-weight: 600;
+
+  letter-spacing: 0.24em;
 }
 
-.zaman-baslik-alani {
-  text-align: center;
-  margin-bottom: 80px;
+.timeline-hero-meta span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+
+  color: var(--text-muted);
 }
 
-.zaman-baslik-alani h1 {
-  font-size: clamp(2.2rem, 7vw, 3.5rem);
-  color: #fff;
-  margin-bottom: 15px;
+.timeline-hero-meta p {
+  color: var(--accent);
 }
 
-.zaman-baslik-alani p {
-  color: #888;
-  font-style: italic;
-  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
-  line-height: 1.5;
+
+/* HERO GRID */
+
+.timeline-hero-grid {
+  margin-top:
+    clamp(55px, 7vw, 100px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(290px, 0.5fr);
+
+  align-items: end;
+
+  gap:
+    clamp(50px, 9vw, 140px);
 }
 
-/* Ana Çizgi */
-.dikey-hat {
-  position: relative;
-  border-left: 2px solid #222;
-  margin-left: 30px; /* Bilgisayarda geniş boşluk */
-  padding-left: 50px;
+.timeline-title-area h1 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4.7rem, 9vw, 9rem);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.055em;
+
+  color: var(--text);
 }
 
-/* Her Durak */
-.durak-noktasi {
-  position: relative;
-  margin-bottom: 60px;
-  transition: transform 0.3s ease;
-}
-
-.durak-noktasi:hover {
-  transform: translateX(5px);
-}
-
-/* Çizgi Üzerindeki Parlayan Noktalar */
-.durak-noktasi::before {
-  content: "";
-  position: absolute;
-  left: -59px; /* Çizgiyle tam hizalama */
-  top: 8px;
-  width: 16px;
-  height: 16px;
-  background-color: #fff;
-  border: 4px solid #000;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  z-index: 2;
-}
-
-.tarih-etiketi {
-  font-weight: bold;
-  font-size: clamp(1.3rem, 4vw, 1.8rem);
-  color: #fff;
-  margin-bottom: 12px;
+.timeline-title-area h1 span {
   display: block;
+
+  margin-top: 0.17em;
+
+  color: var(--text-muted);
 }
 
-.durak-icerik {
-  background: rgba(255, 255, 255, 0.03);
-  padding: clamp(15px, 4vw, 25px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(5px); /* Hafif modern cam efekti */
+
+/* HERO INFO */
+
+.timeline-hero-info {
+  padding-bottom: 10px;
 }
 
-.durak-icerik h3 {
-  color: #eee;
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  margin-bottom: 10px;
+.timeline-hero-info > p {
+  max-width: 400px;
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+
+  color: var(--text-soft);
 }
 
-.durak-icerik p {
-  color: #aaa;
-  line-height: 1.7;
-  font-size: clamp(0.95rem, 2vw, 1.05rem);
-  text-align: left;
+.timeline-range {
+  margin-top: 35px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
 }
 
-/* --- RESPONSIVE DÜZENLEMELER --- */
+.timeline-range strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
 
-/* Tablet (768px altı) */
-@media (max-width: 768px) {
-  .dikey-hat {
-    margin-left: 15px; /* Çizgiyi kenara yaklaştır */
-    padding-left: 35px;
-  }
-  
-  .durak-noktasi::before {
-    left: -44px; /* Mobilde çizgiyi takip etmesi için */
-    width: 14px;
-    height: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  color: var(--text-muted);
+}
+
+.timeline-range i {
+  width: 70px;
+  height: 1px;
+
+  background: var(--accent);
+}
+
+
+/* DEV YILLAR */
+
+.timeline-big-years {
+  margin-top:
+    clamp(70px, 10vw, 140px);
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: baseline;
+
+  overflow: hidden;
+}
+
+.timeline-big-years span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(5rem, 14vw, 13rem);
+
+  font-weight: 500;
+
+  line-height: 0.72;
+
+  letter-spacing: -0.05em;
+
+  color:
+    rgba(242, 238, 230, 0.1);
+}
+
+.timeline-big-years em {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 3rem;
+
+  font-style: normal;
+
+  color: var(--accent);
+}
+
+
+/* =========================
+   LISTE
+========================= */
+
+.timeline-list-section {
+  padding:
+    clamp(90px, 11vw, 150px)
+    0
+    clamp(110px, 13vw, 180px);
+}
+
+
+/* BAŞLIK SATIRI */
+
+.timeline-list-header {
+  padding:
+    0
+    20px
+    18px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 0.7fr)
+    minmax(250px, 1fr)
+    minmax(300px, 1.4fr);
+
+  gap: 50px;
+
+  border-bottom: 1px solid var(--line);
+
+  font-size: 0.58rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--text-muted);
+}
+
+
+/* HER OLAY */
+
+.timeline-row {
+  position: relative;
+
+  min-height: 230px;
+
+  padding:
+    38px
+    20px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 0.7fr)
+    minmax(250px, 1fr)
+    minmax(300px, 1.4fr);
+
+  align-items: start;
+
+  gap: 50px;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.timeline-row:hover {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  background:
+    rgba(180, 154, 106, 0.06);
+}
+
+
+/* YIL */
+
+.timeline-year {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.timeline-year > span {
+  font-size: 0.58rem;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+.timeline-year strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.3rem, 4vw, 4rem);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  color: var(--accent);
+}
+
+
+/* OLAY */
+
+.timeline-event-title > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 0.58rem;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  color: var(--accent);
+}
+
+.timeline-event-title h2 {
+  max-width: 400px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.8rem, 3vw, 2.9rem);
+
+  font-weight: 500;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.025em;
+
+  color: var(--text);
+}
+
+
+/* AÇIKLAMA */
+
+.timeline-event-description p {
+  max-width: 580px;
+
+  font-size: 0.92rem;
+
+  line-height: 1.85;
+
+  color: var(--text-soft);
+}
+
+.timeline-highlight {
+  display: inline-block;
+
+  margin-top: 24px;
+
+  padding:
+    9px
+    13px;
+
+  border-left: 1px solid var(--accent);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--accent);
+}
+
+
+/* VURGULU OLAY */
+
+.timeline-row-featured {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(180, 154, 106, 0.1),
+      rgba(180, 154, 106, 0.02)
+    );
+}
+
+.timeline-row-featured::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: var(--accent);
+}
+
+
+/* =========================
+   ALINTI
+========================= */
+
+.timeline-quote-section {
+  padding:
+    clamp(100px, 14vw, 190px)
+    0;
+
+  background: var(--accent);
+
+  color: #11100e;
+}
+
+.timeline-quote-number {
+  display: block;
+
+  margin-bottom: 45px;
+
+  font-size: 0.64rem;
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  color:
+    rgba(13, 13, 12, 0.55);
+}
+
+.timeline-quote-section blockquote {
+  max-width: 1050px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3rem, 7vw, 7rem);
+
+  font-weight: 600;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+}
+
+.timeline-quote-section blockquote em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.timeline-quote-section > .timeline-container > p {
+  margin-top: 35px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.16em;
+
+  color:
+    rgba(13, 13, 12, 0.6);
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.timeline-ending {
+  padding:
+    clamp(110px, 14vw, 185px)
+    0;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 20% 100%,
+      rgba(180, 154, 106, 0.08),
+      transparent 30rem
+    );
+}
+
+.timeline-ending-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(280px, 0.55fr);
+
+  align-items: end;
+
+  gap:
+    clamp(55px, 10vw, 150px);
+}
+
+.timeline-ending-kicker {
+  font-size: 0.64rem;
+  font-weight: 600;
+
+  letter-spacing: 0.23em;
+
+  color: var(--accent);
+}
+
+.timeline-ending h2 {
+  max-width: 820px;
+
+  margin-top: 20px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3.1rem, 6vw, 6.2rem);
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.04em;
+
+  color: var(--text);
+}
+
+.timeline-ending h2 span {
+  color: var(--text-muted);
+}
+
+.timeline-ending-copy > p {
+  line-height: 1.85;
+
+  font-size: 0.9rem;
+
+  color: var(--text-soft);
+}
+
+
+/* LINK */
+
+.timeline-next-link {
+  position: relative;
+
+  margin-top: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-bottom: 8px;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text);
+}
+
+.timeline-next-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--accent);
+
+  transform: scaleX(0.3);
+  transform-origin: left;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.timeline-next-link:hover::after {
+  transform: scaleX(1);
+}
+
+.timeline-next-link span {
+  color: var(--accent);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.timeline-next-link:hover span {
+  transform: translateX(6px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .timeline-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
   }
 
-  .zaman-baslik-alani {
-    margin-bottom: 50px;
+  .timeline-hero-info {
+    max-width: 540px;
+  }
+
+
+  .timeline-list-header {
+    display: none;
+  }
+
+  .timeline-row {
+    grid-template-columns:
+      150px
+      1fr;
+
+    gap:
+      30px
+      45px;
+  }
+
+  .timeline-event-description {
+    grid-column:
+      2 / 3;
+  }
+
+
+  .timeline-ending-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .timeline-ending-copy {
+    max-width: 500px;
   }
 }
 
-/* Küçük Telefonlar (480px altı) */
-@media (max-width: 480px) {
-  .zaman-akisi-kapsayici {
-    width: 95%;
-    margin-top: 40px;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .timeline-container {
+    width:
+      calc(100% - 40px);
   }
 
-  .dikey-hat {
-    margin-left: 10px;
-    padding-left: 25px;
+
+  .timeline-hero {
+    min-height: auto;
+
+    padding:
+      115px
+      0
+      70px;
   }
 
-  .durak-noktasi::before {
-    left: -38px; /* Çok küçük ekranlarda ince ayar */
-    width: 12px;
-    height: 12px;
-    top: 5px;
+  .timeline-hero-meta {
+    grid-template-columns:
+      40px
+      1fr;
+
+    gap: 14px;
   }
 
-  .durak-icerik {
-    padding: 15px;
+  .timeline-title-area h1 {
+    font-size:
+      clamp(4rem, 18vw, 6rem);
   }
 
-  .durak-noktasi {
-    margin-bottom: 40px;
+  .timeline-big-years {
+    margin-top: 80px;
+  }
+
+  .timeline-big-years span {
+    font-size:
+      clamp(4rem, 20vw, 7rem);
+  }
+
+  .timeline-big-years em {
+    font-size: 1.5rem;
+  }
+
+
+  .timeline-row {
+    min-height: auto;
+
+    padding:
+      35px
+      0;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .timeline-row:hover {
+    padding:
+      35px
+      12px;
+  }
+
+  .timeline-year {
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .timeline-year strong {
+    font-size: 2.3rem;
+  }
+
+  .timeline-event-description {
+    grid-column: auto;
+  }
+
+
+  .timeline-quote-section blockquote {
+    font-size:
+      clamp(3rem, 15vw, 5rem);
+  }
+
+
+  .timeline-ending h2 {
+    font-size:
+      clamp(3rem, 14vw, 4.7rem);
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .timeline-container {
+    width:
+      calc(100% - 32px);
+  }
+
+  .timeline-title-area h1 {
+    font-size: 3.8rem;
+  }
+
+  .timeline-big-years span {
+    font-size: 3.7rem;
   }
 }

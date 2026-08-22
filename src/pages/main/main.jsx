@@ -1,77 +1,435 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./main.css";
 import anaFoto from "../../ilkfoto.JPG";
 
+const siirler = [
+  {
+    baslik: "BABAYA SİTEM",
+    icerik: `Yayladan getirdin Çukurova'ya
+Anamın yağını erittin baba
+Getirmez olaydın bizi buraya
+Yazıda yabanda sürüttün baba...`,
+  },
+  {
+    baslik: "GÜLSÜN BAYRAMDA",
+    icerik: `Ağlayan gözlerle mutlu olunmaz
+Gülmeyen yüzünü güldür bayramda
+Sıkıntı içinde kutlu olunmaz
+Neşeyi sevinci bildir bayramda...`,
+  },
+  {
+    baslik: "ADANA'YA ÖZGÜ",
+    icerik: `Gülek Boğazı'nda Toros Dağı'nda
+Tarihi anlatır dilin Adana
+Portakal bahçesi bostan bağında
+Bir başka kokuyor gülün Adana...`,
+  },
+  {
+    baslik: "GEL",
+    icerik: `İnsan sevgisiyle dolup taşarken
+Bana da gel diyor Yüce Mevlâna
+Hakk'a giden yolu bir bir aşarken
+Bana da gel diyor Yüce Mevlâna...`,
+  },
+  {
+    baslik: "KAPADOKYA DESTANI",
+    icerik: `Nevşehir'e bağlı şirin Ürgüp'te
+Anadolu sensin sen Kapadokya
+Mahsende yıllanan şaraplı küpte
+Anadolu sensin sen Kapadokya...`,
+  },
+  {
+    baslik: "GİRDİ GİZLİCE",
+    icerik: `Ne kadar tatlıydı, ne kadar hoştu
+Gönlüm mutluluğa erdi gizlice
+Sevgisi gönlümde çağladı coştu
+Her gece rüyama girdi gizlice...`,
+  },
+  {
+    baslik: "DARENDE",
+    icerik: `Al yanak kayısı, şirin dutuyla
+Şifa kaynağının yolu Darende
+Tasavvuf müziği, gudüm, uduyla
+Ulamalar şehri ulu Darende...`,
+  },
+  {
+    baslik: "ATA SEVGİSİ",
+    icerik: `Yas tutarken neşe doldum
+Atatürk'ün sevgisinde
+Sağlık, huzur, güven buldum
+Vatanımın çizgisinde...`,
+  },
+  {
+    baslik: "ANNE",
+    icerik: `Meşâkkâtle doğurmuştun
+Ak sütünü kattın anne
+Canı canla yoğurmuştun
+Mutluluğu tattın anne...`,
+  },
+  {
+    baslik: "GURBET TRENİ",
+    icerik: `Nice sevenleri özünden ettin
+Uzayan yolların kısalmadı mı?
+Nice anaları gözünden ettin
+Uzayan yolların kısalmadı mı?...`,
+  },
+  {
+    baslik: "GÖRENLER VAR MI?",
+    icerik: `Bu şehrin üstünü bulut kaplamış
+Yarimi yitirdim görenler var mı?
+Sanki birileri onu saklamış
+Yarimi yitirdim görenler var mı?...`,
+  },
+  {
+    baslik: "BARIŞMAM GAYRI",
+    icerik: `Bana oyun ettin kandım sevgine
+Ne halin varsa gör karışmam gayrı
+İnanmam artık o yalan övgüne
+Uzatma elini barışmam gayrı...`,
+  },
+  {
+    baslik: "KIRLAR KURUMUŞ",
+    icerik: `Yaz gelince kırda çiçek bulunmaz
+Bahardan kalanlar toz olur gayrı
+Nazlı yar gelmezse dallar salınmaz
+Yapraklar dökülür güz olur gayrı...`,
+  },
+  {
+    baslik: "ÜÇGEN OVA",
+    icerik: `Çevresinde Iğdır, Ardahan, Ağrı
+Bir üçgen içinde kurmuşlar Kars'ı
+Yıllar yılı yanmış, kavrulmuş bağrı
+Çeşitli kavimler vurmuşlar Kars'ı...`,
+  },
+  {
+    baslik: "TOZLAR GİBİ",
+    icerik: `Köşelerden gizli baktım
+Aklım fikrim sana taktım
+Her gün damla damla aktım
+Gün altında buzlar gibi...`,
+  },
+];
+
 const Main = () => {
-  const siirler = [
-    { baslik: "BABAYA SİTEM", icerik: `Yayladan getirdin Çukurova'ya\nAnamın yağını erittin baba\nGetirmez olaydın bizi buraya\nYazıda yabanda sürüttün baba...` },
-    { baslik: "GÜLSÜN BAYRAMDA", icerik: `Ağlayan gözlerle mutlu olunmaz\nGülmeyen yüzünü güldür bayramda\nSıkıntı içinde kutlu olunmaz\nNeşeyi sevinci bildir bayramda...` },
-    { baslik: "ADANA'YA ÖZGÜ", icerik: `Gülek Boğazı'nda Toros Dağı'nda\nTarihi anlatır dilin Adana\nPortakal bahçesi bostan bağında\nBir başka kokuyor gülün Adana...` },
-    { baslik: "GEL", icerik: `İnsan sevgisiyle dolup taşarken\nBana da gel diyor Yüce Mevlâna\nHakk'a giden yolu bir bir aşarken\nBana da gel diyor Yüce Mevlâna...` },
-    { baslik: "KAPADOKYA DESTANI", icerik: `Nevşehir'e bağlı şirin Ürgüp'te\nAnadolu sensin sen Kapadokya\nMahsende yıllanan şaraplı küpte\nAnadolu sensin sen Kapadokya...` },
-    { baslik: "GİRDİ GİZLİCE", icerik: `Ne kadar tatlıydı, ne kadar hoştu\nGönlüm mutluluğa erdi gizlice\nSevgisi gönlümde çağladı coştu\nHer gece rüyama girdi gizlice...` },
-    { baslik: "DARENDE", icerik: `Al yanak kayısı, şirin dutuyla\nŞifa kaynağının yolu Darende\nTasavvuf müziği, gudüm, uduyla\nUlamalar şehri ulu Darende...` },
-    { baslik: "ATA SEVGİSİ", icerik: `Yas tutarken neşe doldum\nAtatürk'ün sevgisinde\nSağlık, huzur, güven buldum\nVatanımın çizgisinde...` },
-    { baslik: "ANNE", icerik: `Meşâkkâtle doğurmuştun\nAk sütünü kattın anne\nCanı canla yoğurmuştun\nMutluluğu tattın anne...` },
-    { baslik: "GURBET TRENİ", icerik: `Nice sevenleri özünden ettin\nUzayan yolların kısalmadı mı?\nNice anaları gözünden ettin\nUzayan yolların kısalmadı mı?...` },
-    { baslik: "GÖRENLER VAR MI?", icerik: `Bu şehrin üstünü bulut kaplamış\nYarimi yitirdim görenler var mi?\nSanki birileri onu saklamış\nYarimi yitirdim görenler var mi?...` },
-    { baslik: "BARIŞMAM GAYRI", icerik: `Bana oyun ettin kandım sevgine\nNe halin varsa gör karışmam gayrı\nİnanman artık o yalan övgüne\nUzatma elini barışmam gayrı...` },
-    { baslik: "KIRLAR KURUMUŞ", icerik: `Yaz gelince kırda çiçek bulunmaz\nBahardan kalanlar toz olur gayrı\nNazlı yar gelmezse dallar salınmaz\nYapraklar dökülür güz olur gayrı...` },
-    { baslik: "ÜÇGEN OVA", icerik: `Çevresinde Iğdır, Ardahan, Ağrı\nBir üçgen içinde kurmuşlar Kars'ı\nYıllar yılı yanmış, kavrulmuş bağrı\nÇeşitli kavimler vurmuşlar Kars'ı...` },
-    { baslik: "TOZLAR GİBİ", icerik: `Köşelerden gizli baktım\nAklım fikrim sana taktım\nHer gün damla damla aktım\nGün altında buzlar gibi...` },
-  ];
+  const [randomSiir, setRandomSiir] = useState(
+    () => siirler[Math.floor(Math.random() * siirler.length)]
+  );
 
-  const [randomSiir, setRandomSiir] = useState(siirler[0]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const yeniSiirGetir = () => {
+    let yeniSiir = randomSiir;
 
-  useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 100);
-    const rastgeleIndex = Math.floor(Math.random() * siirler.length);
-    setRandomSiir(siirler[rastgeleIndex]);
-  }, []);
+    while (
+      yeniSiir.baslik === randomSiir.baslik &&
+      siirler.length > 1
+    ) {
+      yeniSiir =
+        siirler[Math.floor(Math.random() * siirler.length)];
+    }
+
+    setRandomSiir(yeniSiir);
+  };
 
   return (
-    <div className="tüm">
-      <div className="bg-decoration"></div>
-      
-      <div className={`hero ${isLoaded ? 'loaded' : ''}`}>
-        {/* Fotoğraf Alanı */}
-        <div className="resim-konteyner">
-          <h1 className="baslik-ana">Âşık Baki Yıldırım</h1>
-          <div className="altyazi-cizgi"></div>
-          <div className="foto-wrapper">
-            <img src={anaFoto} alt="Baki Yıldırım" className="foto" />
+    <div className="home-page">
+
+      {/* HERO */}
+      <section className="home-hero">
+        <div className="home-hero-inner">
+
+          <div className="hero-copy">
+            <p className="hero-eyebrow">
+              HALK OZANI · ŞAİR · FOTOĞRAFÇI
+            </p>
+
+            <h1 className="hero-title">
+              Âşık
+              <span>Baki Yıldırım</span>
+            </h1>
+
+            <div className="hero-years">
+              <span>1945</span>
+              <i></i>
+              <span>2017</span>
+            </div>
+
+            <p className="hero-description">
+              Şiirleri, fotoğrafları ve kültürel çalışmalarıyla
+              Anadolu'nun sesini yaşatan bir ömrün dijital arşivi.
+            </p>
+
+            <div className="hero-actions">
+              <Link to="/hakkinda" className="primary-link">
+                Hayatını Keşfet
+                <span>→</span>
+              </Link>
+
+              <Link to="/galeri" className="secondary-link">
+                Eserlerini Gör
+              </Link>
+            </div>
           </div>
-          <p className="foto-alt-yazi">
-            "Âşık Baki Yıldırım, şiirleriyle Anadolu'nun sesini yansıtan bir halk şairidir."
-          </p>
+
+          <figure className="hero-image-area">
+            <div className="hero-image-frame">
+              <img
+                src={anaFoto}
+                alt="Âşık Baki Yıldırım"
+                className="hero-image"
+              />
+
+              <div className="image-number">
+                01
+              </div>
+            </div>
+
+            <figcaption>
+              Baki Yıldırım'ın kişisel arşivinden
+            </figcaption>
+          </figure>
+
         </div>
 
-        {/* Tanıtım Alanı */}
-        <div className="tanitim">
-          <p className="tanitim-metin">
-            Şiirleri Türkiye'de birçok gazete ve antolojide yayımlanmış,
-            halk edebiyatı geleneğini yaşatan önemli ozanlarımızdandır.
-          </p>
+        <a href="#hikaye" className="scroll-cue">
+          <span>Keşfet</span>
+          <i></i>
+        </a>
+      </section>
 
-          <div className="bilgi-kartlar">
-            <div className="kart kart-1">
-              <h3>Şiire Başlangıç</h3>
-              <p>1961 yılında Âşık Veysel'i dinlemesi, onun şiir yolculuğunda dönüm noktası olmuştur.</p>
+
+      {/* HAYATINDAN */}
+      <section className="story-section" id="hikaye">
+        <div className="section-inner">
+
+          <header className="section-heading">
+            <span className="section-number">01</span>
+
+            <div>
+              <p className="section-kicker">
+                BİR ÖMÜR
+              </p>
+
+              <h2>
+                Çukurova'dan
+                <span> Anadolu'ya uzanan bir hikâye.</span>
+              </h2>
+            </div>
+          </header>
+
+          <div className="story-content">
+
+            <div className="story-lead">
+              <p>
+                Şiirleri Türkiye'de birçok gazete ve antolojide
+                yayımlanan Baki Yıldırım, halk edebiyatı
+                geleneğini yaşamı boyunca sürdürdü.
+              </p>
             </div>
 
-            <div className="kart kart-2">
-              <h3>Kültürel Katkıları</h3>
-              <p>1999 yılında Ceyhan Şairler ve Ozanlar Derneği'nin kurucu üyesi olmuştur.</p>
+            <div className="story-details">
+              <p>
+                1961 yılında Âşık Veysel'i dinlemesi,
+                şiir yolculuğunun önemli dönüm noktalarından
+                biri oldu.
+              </p>
+
+              <p>
+                1999 yılında Ceyhan Şairler ve Ozanlar
+                Derneği'nin kurucu üyeleri arasında yer aldı.
+              </p>
+
+              <Link to="/hakkinda" className="text-link">
+                Yaşam öyküsünün tamamı
+                <span>↗</span>
+              </Link>
             </div>
 
-            <div className="kart kart-siir">
-              <h3 className="siir-baslik">{randomSiir.baslik}</h3>
-              <pre className="siir">{randomSiir.icerik}</pre>
-            </div>
           </div>
+
+          <div className="milestones">
+
+            <div className="milestone">
+              <strong>1945</strong>
+              <span>Doğumu</span>
+            </div>
+
+            <div className="milestone">
+              <strong>1961</strong>
+              <span>Şiir yolculuğunda dönüm noktası</span>
+            </div>
+
+            <div className="milestone">
+              <strong>1999</strong>
+              <span>Ceyhan Şairler ve Ozanlar Derneği</span>
+            </div>
+
+            <div className="milestone">
+              <strong>2017</strong>
+              <span>Ardında kalan miras</span>
+            </div>
+
+          </div>
+
         </div>
-      </div>
+      </section>
+
+
+      {/* ŞİİR */}
+      <section className="poem-section">
+        <div className="poem-inner">
+
+          <div className="poem-meta">
+            <span className="section-number">02</span>
+
+            <p className="section-kicker">
+              DİZELERİNDEN
+            </p>
+
+            <p className="poem-note">
+              Arşivde yer alan şiirlerinden rastgele bir kesit.
+            </p>
+
+            <button
+              type="button"
+              className="poem-refresh"
+              onClick={yeniSiirGetir}
+            >
+              Başka bir şiir
+              <span>↻</span>
+            </button>
+          </div>
+
+          <div className="poem-content">
+            <span className="quote-mark">“</span>
+
+            <h2>{randomSiir.baslik}</h2>
+
+            <pre>{randomSiir.icerik}</pre>
+
+            <Link to="/galeri" className="text-link">
+              Eserlerini keşfet
+              <span>↗</span>
+            </Link>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* KEŞİF */}
+      <section className="explore-section">
+        <div className="section-inner">
+
+          <header className="explore-heading">
+            <p className="section-kicker">
+              ARŞİVİ KEŞFET
+            </p>
+
+            <h2>
+              Bir ömrün izlerini
+              <span> adım adım takip edin.</span>
+            </h2>
+          </header>
+
+          <div className="explore-links">
+
+            <Link
+              to="/hakkinda"
+              className="explore-item"
+            >
+              <span className="explore-index">
+                01
+              </span>
+
+              <div>
+                <h3>Hayatı</h3>
+
+                <p>
+                  Çocukluğundan sanat yaşamına uzanan
+                  biyografisi.
+                </p>
+              </div>
+
+              <span className="explore-arrow">
+                ↗
+              </span>
+            </Link>
+
+
+            <Link
+              to="/zaman-cizelgesi"
+              className="explore-item"
+            >
+              <span className="explore-index">
+                02
+              </span>
+
+              <div>
+                <h3>Zaman Çizelgesi</h3>
+
+                <p>
+                  Yaşamındaki önemli anları kronolojik
+                  olarak inceleyin.
+                </p>
+              </div>
+
+              <span className="explore-arrow">
+                ↗
+              </span>
+            </Link>
+
+
+            <Link
+              to="/galeri"
+              className="explore-item"
+            >
+              <span className="explore-index">
+                03
+              </span>
+
+              <div>
+                <h3>Eserleri</h3>
+
+                <p>
+                  Şiirleri, kitapları ve arşivde yer alan
+                  çalışmalarını keşfedin.
+                </p>
+              </div>
+
+              <span className="explore-arrow">
+                ↗
+              </span>
+            </Link>
+
+
+            <Link
+              to="/fotograf-arsivi"
+              className="explore-item"
+            >
+              <span className="explore-index">
+                04
+              </span>
+
+              <div>
+                <h3>Fotoğraf Arşivi</h3>
+
+                <p>
+                  Aile albümünden günümüze ulaşan
+                  orijinal ve restore edilmiş fotoğrafları
+                  karşılaştırın.
+                </p>
+              </div>
+
+              <span className="explore-arrow">
+                ↗
+              </span>
+            </Link>
+
+          </div>
+
+        </div>
+      </section>
+
     </div>
   );
 };

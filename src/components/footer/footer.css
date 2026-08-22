@@ -1,81 +1,532 @@
-.ana-alt-bilgi {
-  background-color: #000;
-  color: #555;
-  padding: 50px 0 30px 0; /* Mobilde daha ferah dursun diye padding artırıldı */
-  border-top: 1px solid #111;
+.site-footer {
+  position: relative;
+
   width: 100%;
-  margin-top: auto;
+
+  padding:
+    clamp(90px, 12vw, 150px)
+    0
+    30px;
+
+  overflow: hidden;
+
+  border-top: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(180, 154, 106, 0.09),
+      transparent 30rem
+    ),
+    #0a0a09;
+
+  color: var(--text);
 }
 
-.footer-icerik {
-  max-width: 1100px;
+.footer-container {
+  width: min(
+    calc(100% - 64px),
+    var(--container)
+  );
+
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
 }
 
-.footer-sol p {
-  font-weight: bold;
-  color: #888;
-  margin-bottom: 5px;
-  font-size: 0.95rem;
+
+/* =========================
+   ANA ALAN
+========================= */
+
+.footer-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.9fr)
+    minmax(400px, 1fr);
+
+  gap:
+    clamp(70px, 11vw, 170px);
 }
 
-.footer-sol span {
-  font-size: 0.8rem;
-  font-style: italic;
-  display: block; /* Mobilde alt alta düzgün dursun */
+
+/* =========================
+   MARKA
+========================= */
+
+.footer-brand {
+  max-width: 520px;
 }
 
-.footer-sag .yapimci-notu {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  line-height: 1.5;
+.footer-kicker,
+.footer-column-title {
+  display: block;
+
+  font-size: 0.59rem;
+  font-weight: 600;
+
+  letter-spacing: 0.23em;
+
+  color: var(--accent);
 }
 
-.footer-sag .yapimci-notu span {
-  color: #fff;
+.footer-name {
+  display: inline-block;
+
+  margin-top: 28px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(4rem, 7vw, 7rem);
+
   font-weight: 500;
-  transition: 0.3s;
-  white-space: nowrap; /* İsmin mobilde yarım kalmasın */
+
+  line-height: 0.75;
+
+  letter-spacing: -0.05em;
+
+  color: var(--text);
 }
 
-.footer-sag .yapimci-notu span:hover {
-  color: #aaa;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+.footer-name span {
+  display: block;
+
+  margin-top: 0.17em;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.3s ease;
 }
 
-.footer-alt-cizgi {
-  height: 1px; /* 2px mobilde kaba durabilir, 1px daha zarif */
-  background: linear-gradient(90deg, transparent, #222, transparent);
-  width: 70%;
-  margin: 30px auto 0;
+.footer-name:hover span {
+  color: var(--accent);
 }
 
-/* --- RESPONSIVE AYARLAR --- */
 
-@media (max-width: 768px) {
-  .ana-alt-bilgi {
-    padding: 40px 0;
+/* YILLAR */
+
+.footer-years {
+  width: min(330px, 100%);
+
+  margin-top: 36px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.footer-years span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.14em;
+
+  color: var(--text-muted);
+}
+
+.footer-years i {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--accent),
+      rgba(180, 154, 106, 0.1)
+    );
+}
+
+
+/* AÇIKLAMA */
+
+.footer-description {
+  max-width: 430px;
+
+  margin-top: 28px;
+
+  font-size: 0.82rem;
+
+  line-height: 1.8;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   NAVİGASYON
+========================= */
+
+.footer-navigation {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap:
+    clamp(40px, 6vw, 90px);
+}
+
+.footer-column nav {
+  margin-top: 25px;
+
+  border-top: 1px solid var(--line);
+}
+
+.footer-column nav a {
+  min-height: 52px;
+
+  padding: 0 2px;
+
+  display: grid;
+
+  grid-template-columns:
+    32px
+    1fr;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 1px solid var(--line);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.35rem;
+
+  color: var(--text-soft);
+
+  transition:
+    padding 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.footer-column nav a:hover {
+  padding-left: 10px;
+
+  color: var(--text);
+
+  background:
+    rgba(180, 154, 106, 0.06);
+}
+
+.footer-column nav a > span {
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   İLETİŞİM
+========================= */
+
+.footer-contact > p {
+  max-width: 320px;
+
+  margin-top: 27px;
+
+  font-size: 0.8rem;
+
+  line-height: 1.8;
+
+  color: var(--text-muted);
+}
+
+.footer-contact > a {
+  position: relative;
+
+  margin-top: 32px;
+
+  padding:
+    16px
+    0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.15rem, 1.7vw, 1.55rem);
+
+  color: var(--text);
+
+  word-break: break-word;
+
+  transition:
+    color 0.25s ease,
+    padding 0.25s ease;
+}
+
+.footer-contact > a:hover {
+  padding-left: 8px;
+  padding-right: 8px;
+
+  color: var(--accent);
+}
+
+.footer-contact > a span {
+  flex-shrink: 0;
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  font-size: 0.9rem;
+
+  color: var(--accent);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.footer-contact > a:hover span {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* =========================
+   DEV YAZI
+========================= */
+
+.footer-marquee {
+  width: 100%;
+
+  margin-top:
+    clamp(90px, 12vw, 160px);
+
+  padding:
+    30px
+    0
+    20px;
+
+  overflow: hidden;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-marquee span {
+  display: block;
+
+  width: max-content;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(5rem, 12vw, 11.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  white-space: nowrap;
+
+  letter-spacing: -0.055em;
+
+  color:
+    rgba(242, 238, 230, 0.07);
+
+  transition:
+    color 0.5s ease;
+}
+
+.footer-marquee:hover span {
+  color:
+    rgba(180, 154, 106, 0.14);
+}
+
+
+/* =========================
+   ALT SATIR
+========================= */
+
+.footer-bottom {
+  min-height: 85px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-bottom p {
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
+}
+
+.footer-location {
+  text-align: center;
+
+  color: var(--accent) !important;
+}
+
+.footer-credit {
+  text-align: right;
+}
+
+.footer-credit span {
+  color: var(--text-soft);
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-credit:hover span {
+  color: var(--accent);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 80px;
   }
 
-  .footer-icerik {
-    flex-direction: column; /* Mobilde her şeyi ortalar */
-    text-align: center;
-    gap: 25px; /* Elemanlar arası boşluk */
+  .footer-brand {
+    max-width: 600px;
   }
 
-  .footer-sol p {
-    font-size: 0.9rem;
+  .footer-navigation {
+    gap: 50px;
   }
 
-  .footer-sag .yapimci-notu {
-    font-size: 0.8rem;
+  .footer-bottom {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    padding:
+      25px
+      0;
+
+    gap:
+      18px
+      25px;
   }
 
-  .footer-alt-cizgi {
-    width: 90%; /* Mobilde çizgi biraz daha yayılsın */
+  .footer-location {
+    text-align: right;
+  }
+
+  .footer-credit {
+    grid-column:
+      1 / -1;
+
+    text-align: left;
+  }
+}
+
+
+/* =========================
+   MOBİL
+========================= */
+
+@media (max-width: 650px) {
+
+  .site-footer {
+    padding-top: 80px;
+  }
+
+  .footer-container {
+    width:
+      calc(100% - 40px);
+  }
+
+  .footer-navigation {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+  .footer-name {
+    font-size:
+      clamp(4rem, 20vw, 6rem);
+  }
+
+  .footer-marquee {
+    margin-top: 90px;
+  }
+
+  .footer-marquee span {
+    font-size:
+      clamp(4.5rem, 23vw, 7rem);
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+
+    padding:
+      28px
+      0;
+
+    gap: 14px;
+  }
+
+  .footer-location,
+  .footer-credit {
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .footer-container {
+    width:
+      calc(100% - 32px);
   }
 }

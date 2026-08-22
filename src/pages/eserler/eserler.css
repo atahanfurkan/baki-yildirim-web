@@ -1,187 +1,1029 @@
-/* Ana Kapsayıcı */
-.eserler-kapsayici {
-  max-width: 1200px;
+.works-page {
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.works-container {
+  width: min(
+    calc(100% - 64px),
+    var(--container)
+  );
+
   margin: 0 auto;
-  padding: 60px 5%; /* Mobilde daha esnek boşluk */
-  background-color: #000;
 }
 
-.eserler-ust-alan { 
-  text-align: center; 
-  margin-bottom: 60px; 
+
+/* =========================
+   HERO
+========================= */
+
+.works-hero {
+  min-height: 100svh;
+
+  padding:
+    145px
+    0
+    100px;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 83% 18%,
+      rgba(180, 154, 106, 0.1),
+      transparent 33rem
+    );
 }
 
-.eserler-ust-alan h1 { 
-  font-size: clamp(2.2rem, 8vw, 3.5rem); 
-  color: #fff; 
-  letter-spacing: -2px; 
+.works-hero-meta {
+  display: grid;
+
+  grid-template-columns:
+    80px
+    1fr;
+
+  gap: 30px;
+
+  align-items: center;
 }
 
-.eserler-ust-alan p { 
-  color: #666; 
-  margin-top: 10px; 
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+.works-hero-meta > span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+
+  color: var(--text-muted);
 }
 
-.bolum-basligi {
-  color: #fff; 
-  font-size: clamp(1rem, 3vw, 1.2rem); 
-  text-transform: uppercase; 
-  letter-spacing: 2px;
-  margin-bottom: 30px; 
-  border-left: 4px solid #fff; 
-  padding-left: 15px;
+.works-hero-meta p,
+.works-kicker {
+  font-size: 0.66rem;
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+
+  color: var(--accent);
 }
 
-/* Video Tasarımı */
-.video-izgara { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-  gap: 25px; 
-  margin-bottom: 80px; 
+.works-hero-grid {
+  margin-top:
+    clamp(60px, 8vw, 110px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.2fr)
+    minmax(300px, 0.55fr);
+
+  align-items: end;
+
+  gap:
+    clamp(60px, 10vw, 150px);
 }
 
-.video-kart { 
-  background: #0a0a0a; 
-  border: 1px solid #1a1a1a; 
-  border-radius: 15px; 
-  overflow: hidden; 
+.works-title-area h1 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(5rem, 10vw, 9.6rem);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.055em;
 }
 
-.iframe-kapsayici { 
-  position: relative; 
-  padding-bottom: 56.25%; /* 16:9 Oranı */
-  height: 0; 
+.works-title-area h1 span {
+  display: block;
+
+  margin-top: 0.15em;
+
+  color: var(--text-muted);
 }
 
-.iframe-kapsayici iframe { 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  border: none; 
+.works-intro > p {
+  max-width: 420px;
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+
+  color: var(--text-soft);
 }
 
-.video-bilgi { 
-  padding: 15px; 
-  text-align: center; 
-  color: #888; 
-  font-size: 0.95rem;
+
+/* HERO SAYILAR */
+
+.works-stats {
+  margin-top: 42px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--line);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
 }
 
-/* Kitap Tasarımı */
-.kitaplar-bolumu { margin-bottom: 80px; }
+.works-stats div {
+  display: flex;
+  flex-direction: column;
 
-.kitap-izgara { 
-  display: grid; 
-  /* Mobilde 2 sütun, tablette 3, masaüstünde 4 sütun */
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
-  gap: 25px; 
+  gap: 7px;
 }
 
-.kitap-kart h3 { 
-  color: #fff; 
-  font-size: 0.9rem; 
-  margin-top: 15px; 
-  text-align: center; 
-  font-weight: 500; 
-  line-height: 1.4;
+.works-stats strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.7rem;
+  font-weight: 500;
+
+  color: var(--accent);
 }
 
-.kitap-kapak { 
-  aspect-ratio: 2 / 3; 
-  background: #0a0a0a; 
-  border-radius: 8px; 
-  overflow: hidden; 
-  border: 1px solid #222; 
-  transition: 0.3s ease; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+.works-stats span {
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-muted);
 }
 
-.kitap-kapak img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
-.kitap-kapak:hover { transform: translateY(-8px); border-color: #555; }
 
-.kitap-yok-kapak {
-  height: 100%; 
-  display: flex; 
-  flex-direction: column; 
+/* =========================
+   ORTAK SECTION
+========================= */
+
+.works-section {
+  padding:
+    clamp(105px, 13vw, 180px)
+    0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.works-section-heading {
+  display: grid;
+
+  grid-template-columns:
+    80px
+    1fr;
+
+  gap: 30px;
+
+  margin-bottom:
+    clamp(60px, 8vw, 110px);
+}
+
+.works-section-index {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
+}
+
+.works-section-heading h2,
+.works-ending h2 {
+  max-width: 900px;
+
+  margin-top: 17px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3.2rem, 6vw, 6.2rem);
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.04em;
+}
+
+.works-section-heading h2 span,
+.works-ending h2 span {
+  color: var(--text-muted);
+}
+
+.works-section-description {
+  max-width: 560px;
+
+  margin-top: 25px;
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+
+  color: var(--text-soft);
+}
+
+
+/* =========================
+   VİDEOLAR
+========================= */
+
+.works-video-section {
+  background: var(--bg);
+}
+
+.works-video-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    clamp(24px, 3vw, 45px);
+}
+
+.works-video-card {
+  border-top: 1px solid var(--line);
+}
+
+.works-video-frame {
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  margin-top: 18px;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+.works-video-frame iframe {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+.works-video-info {
+  min-height: 110px;
+
+  padding: 24px 2px;
+
+  display: grid;
+
+  grid-template-columns:
+    50px
+    1fr;
+
+  gap: 20px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.works-video-info > span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
+}
+
+.works-video-info p {
+  margin-bottom: 7px;
+
+  font-size: 0.58rem;
+  font-weight: 600;
+
+  letter-spacing: 0.17em;
+
+  color: var(--accent);
+}
+
+.works-video-info h3 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.7rem, 2.5vw, 2.5rem);
+
+  font-weight: 500;
+}
+
+
+/* =========================
+   KİTAPLAR
+========================= */
+
+.works-books-section {
+  background:
+    linear-gradient(
+      120deg,
+      var(--surface),
+      #11100e
+    );
+}
+
+.works-books-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    clamp(18px, 2.5vw, 36px);
+}
+
+.works-book {
+  min-width: 0;
+}
+
+.works-book-cover {
+  position: relative;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: var(--bg);
+
+  border: 1px solid var(--line);
+}
+
+.works-book-cover img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    filter 0.3s ease;
+}
+
+.works-book-cover:hover img {
+  transform: scale(1.035);
+
+  filter: brightness(0.78);
+}
+
+
+/* HOVER */
+
+.works-book-overlay {
+  position: absolute;
+  inset: 0;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(13, 13, 12, 0.88),
+      transparent 58%
+    );
+
+  transition: opacity 0.3s ease;
+}
+
+.works-book-cover:hover .works-book-overlay {
+  opacity: 1;
+}
+
+.works-book-overlay span {
+  font-size: 0.63rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-soft);
+}
+
+.works-book-overlay i {
+  font-size: 1.15rem;
+  font-style: normal;
+
+  color: var(--accent);
+}
+
+
+/* GÖRSELİ OLMAYAN KİTAP */
+
+.works-book-cover-empty {
+  cursor: default;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(180, 154, 106, 0.08),
+      transparent 65%
+    ),
+    #11100e;
+}
+
+.works-book-placeholder {
+  width: 100%;
+  height: 100%;
+
+  padding: 30px 24px;
+
+  display: flex;
+  flex-direction: column;
+
   justify-content: center;
-  align-items: center; 
-  text-align: center; 
-  padding: 15px; 
-  background: #111; 
-  color: #444;
+  align-items: center;
+
+  text-align: center;
 }
 
-/* Foto Arşivi */
-.foto-izgara { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-  gap: 15px; 
+.works-book-placeholder > span {
+  margin-bottom: auto;
+
+  align-self: flex-start;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
 }
 
-/* Masaüstünde fotoğraflar biraz daha büyük olsun */
-@media (min-width: 768px) {
-  .foto-izgara { 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 20px;
+.works-book-placeholder p {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.8rem, 2.5vw, 2.5rem);
+
+  line-height: 1.05;
+
+  color: var(--text);
+}
+
+.works-book-placeholder small {
+  margin-top: auto;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+}
+
+
+/* KİTAP ALTI */
+
+.works-book-info {
+  padding-top: 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    32px
+    1fr;
+
+  gap: 15px;
+}
+
+.works-book-info > span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
+}
+
+.works-book-info p {
+  margin-bottom: 6px;
+
+  font-size: 0.55rem;
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  color: var(--accent);
+}
+
+.works-book-info h3 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.25rem, 1.8vw, 1.65rem);
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   FOTOĞRAF ARŞİVİ
+========================= */
+
+.works-archive-section {
+  background: var(--bg);
+}
+
+.works-photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(12, 1fr);
+
+  grid-auto-flow: dense;
+
+  gap: 14px;
+}
+
+.works-photo-item {
+  position: relative;
+
+  grid-column: span 4;
+
+  aspect-ratio: 4 / 3;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 0;
+
+  background: var(--surface);
+
+  cursor: pointer;
+}
+
+.works-photo-2,
+.works-photo-5 {
+  grid-column: span 5;
+}
+
+.works-photo-3,
+.works-photo-6 {
+  grid-column: span 7;
+}
+
+.works-photo-8 {
+  grid-column: span 4;
+
+  aspect-ratio: 3 / 4;
+}
+
+.works-photo-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.88)
+    contrast(1.03);
+
+  transition:
+    transform 0.8s cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    ),
+    filter 0.3s ease;
+}
+
+.works-photo-item:hover img {
+  transform: scale(1.035);
+
+  filter:
+    brightness(0.7)
+    saturate(0.95);
+}
+
+
+/* FOTO NUMARA */
+
+.works-photo-number {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  z-index: 2;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.78rem;
+
+  color:
+    rgba(255, 255, 255, 0.8);
+}
+
+
+/* FOTO HOVER */
+
+.works-photo-hover {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(13, 13, 12, 0.85),
+      transparent 55%
+    );
+
+  transition: opacity 0.3s ease;
+}
+
+.works-photo-item:hover .works-photo-hover {
+  opacity: 1;
+}
+
+.works-photo-hover span {
+  font-size: 0.65rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text);
+}
+
+.works-photo-hover i {
+  font-style: normal;
+  font-size: 1.15rem;
+
+  color: var(--accent);
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.works-ending {
+  padding:
+    clamp(105px, 14vw, 185px)
+    0;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 20% 100%,
+      rgba(180, 154, 106, 0.09),
+      transparent 30rem
+    );
+}
+
+.works-ending-grid {
+  margin-top: 24px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(280px, 0.5fr);
+
+  align-items: end;
+
+  gap:
+    clamp(60px, 10vw, 150px);
+}
+
+.works-ending h2 {
+  margin: 0;
+}
+
+.works-ending-grid > p {
+  max-width: 430px;
+
+  font-size: 0.9rem;
+
+  line-height: 1.85;
+
+  color: var(--text-soft);
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.works-lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 5000;
+
+  padding: 70px 30px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(7, 7, 6, 0.97);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  cursor: zoom-out;
+}
+
+.works-lightbox-content {
+  max-width: min(1100px, 92vw);
+  max-height: 88vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  cursor: default;
+}
+
+.works-lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.works-lightbox-content p {
+  font-size: 0.6rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+}
+
+.works-lightbox-close {
+  position: fixed;
+
+  top: 25px;
+  right: 32px;
+
+  z-index: 5001;
+
+  width: 45px;
+  height: 45px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 2.3rem;
+
+  font-weight: 300;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.works-lightbox-close:hover {
+  color: var(--accent);
+
+  transform: rotate(5deg);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .works-hero-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .works-intro {
+    max-width: 550px;
+  }
+
+  .works-books-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .works-photo-2,
+  .works-photo-3,
+  .works-photo-5,
+  .works-photo-6 {
+    grid-column: span 6;
+  }
+
+  .works-photo-item,
+  .works-photo-8 {
+    grid-column: span 6;
+  }
+
+  .works-ending-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
   }
 }
 
-.foto-cerceve { 
-  aspect-ratio: 1 / 1; 
-  background: #111; 
-  border-radius: 10px; 
-  overflow: hidden; 
-  border: 1px solid #222; 
-  cursor: pointer; 
-}
 
-.foto-cerceve img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
-.foto-cerceve:hover img { transform: scale(1.1); }
+/* =========================
+   MOBİL
+========================= */
 
-/* Lightbox */
-.lightbox-overlay { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background: rgba(0,0,0,0.95); 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  z-index: 2000; 
-}
+@media (max-width: 650px) {
 
-.lightbox-icerik { position: relative; width: 90%; max-width: 800px; display: flex; justify-content: center; }
-.lightbox-icerik img { max-width: 100%; max-height: 85vh; border-radius: 5px; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
-
-.kapat-btn { 
-  position: absolute; 
-  top: -50px; 
-  right: 0; 
-  background: none; 
-  border: none; 
-  color: #fff; 
-  font-size: 35px; 
-  cursor: pointer; 
-}
-
-/* --- MOBİL ÖZEL AYARLAR --- */
-@media (max-width: 600px) {
-  .video-izgara {
-    grid-template-columns: 1fr; /* Videolar tek sütun */
+  .works-container {
+    width:
+      calc(100% - 40px);
   }
 
-  .kitap-izgara {
-    grid-template-columns: repeat(2, 1fr); /* Kitaplar yan yana 2 tane */
-    gap: 15px;
+  .works-hero {
+    min-height: auto;
+
+    padding:
+      115px
+      0
+      80px;
   }
 
-  .foto-izgara {
-    grid-template-columns: repeat(2, 1fr); /* Fotoğraflar yan yana 2 tane */
+  .works-hero-meta {
+    grid-template-columns:
+      40px
+      1fr;
+
+    gap: 14px;
+  }
+
+  .works-title-area h1 {
+    font-size:
+      clamp(4rem, 18vw, 6rem);
+  }
+
+  .works-stats {
     gap: 10px;
+  }
+
+
+  .works-section-heading {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .works-video-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .works-books-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      35px
+      14px;
+  }
+
+  .works-book-info {
+    grid-template-columns: 1fr;
+  }
+
+  .works-book-info > span {
+    display: none;
+  }
+
+
+  .works-photo-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 8px;
+  }
+
+  .works-photo-item,
+  .works-photo-2,
+  .works-photo-3,
+  .works-photo-5,
+  .works-photo-6,
+  .works-photo-8 {
+    grid-column: span 1;
+
+    aspect-ratio: 1 / 1;
+  }
+
+
+  .works-lightbox {
+    padding:
+      70px
+      16px
+      25px;
+  }
+
+  .works-lightbox-close {
+    right: 15px;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .works-container {
+    width:
+      calc(100% - 32px);
+  }
+
+  .works-title-area h1 {
+    font-size: 3.8rem;
+  }
+
+  .works-books-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .works-book-placeholder {
+    padding: 20px 12px;
+  }
+
+  .works-book-placeholder p {
+    font-size: 1.45rem;
   }
 }

@@ -1,178 +1,1009 @@
-/* Ana Kapsayıcı */
-.page-container {
+.life-page {
   width: 100%;
-  min-height: 100vh;
-  background-color: #000;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* =========================
+   ORTAK
+========================= */
+
+.life-container {
+  width: min(
+    calc(100% - 64px),
+    var(--container)
+  );
+
+  margin: 0 auto;
+}
+
+.life-eyebrow,
+.chapter-kicker {
+  font-size: 0.67rem;
+  font-weight: 600;
+
+  letter-spacing: 0.27em;
+
+  color: var(--accent);
+}
+
+.life-page-number {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.14em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.life-hero {
+  min-height: 100svh;
+
+  padding:
+    145px
+    0
+    100px;
+
   display: flex;
-  justify-content: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(180, 154, 106, 0.09),
+      transparent 32rem
+    );
 }
 
-.hakkinda-dis-kutu {
-  max-width: 850px;
-  width: 90%;
-  margin: 40px auto;
-  padding-bottom: 80px;
+.life-hero-top {
+  display: grid;
+
+  grid-template-columns:
+    80px
+    1fr;
+
+  align-items: center;
+
+  gap: 30px;
 }
 
-/* Başlık Bölümü */
-.hakkinda-ust-alan {
-  margin-bottom: 60px;
-  text-align: center;
-  padding-top: 40px;
+.life-hero-content {
+  margin-top:
+    clamp(55px, 7vw, 100px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(300px, 0.55fr);
+
+  align-items: end;
+
+  gap:
+    clamp(50px, 9vw, 140px);
 }
 
-.ana-baslik {
-  font-size: clamp(2rem, 8vw, 3.5rem); /* Dinamik boyutlandırma */
-  color: #fff;
-  margin-bottom: 15px;
+.life-title-area h1 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(5rem, 10vw, 9.8rem);
+
+  font-weight: 500;
+
+  line-height: 0.78;
+
+  letter-spacing: -0.055em;
+
+  color: var(--text);
 }
 
-.alt-slogan {
-  color: #888;
-  font-family: 'Georgia', serif;
+.life-title-area h1 span {
+  display: block;
+
+  margin-top: 0.14em;
+
+  color: var(--text-muted);
+}
+
+.life-intro {
+  padding-bottom: 8px;
+}
+
+.life-intro-text {
+  max-width: 390px;
+
+  font-size:
+    clamp(1rem, 1.4vw, 1.12rem);
+
+  line-height: 1.8;
+
+  color: var(--text-soft);
+}
+
+.life-mini-info {
+  margin-top: 34px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-size: 0.62rem;
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
+}
+
+
+/* HERO ALINTI */
+
+.life-quote {
+  position: relative;
+
+  margin-top:
+    clamp(80px, 10vw, 145px);
+
+  padding:
+    clamp(45px, 6vw, 75px)
+    clamp(30px, 6vw, 90px);
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.life-quote-mark {
+  position: absolute;
+
+  top: -38px;
+  left: 5px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 8rem;
+
+  line-height: 1;
+
+  color:
+    rgba(180, 154, 106, 0.16);
+
+  pointer-events: none;
+}
+
+.life-quote blockquote {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 970px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.4rem, 5vw, 5.2rem);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.03em;
+
+  color: var(--text);
+}
+
+.life-quote blockquote em {
+  font-weight: 500;
   font-style: italic;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  letter-spacing: 1px;
-  line-height: 1.5;
-  padding: 0 10px;
+
+  color: var(--accent);
 }
 
-/* Ana İçerik Alanı */
-.icerik-bolumu {
+.life-quote-name {
+  display: block;
+
+  margin-top: 28px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.16em;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   CHAPTER
+========================= */
+
+.life-chapter {
+  padding:
+    clamp(105px, 13vw, 185px)
+    0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.life-chapter-alt {
+  background:
+    linear-gradient(
+      120deg,
+      var(--surface),
+      #11100e
+    );
+}
+
+.life-chapter-grid {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(0, 1fr);
+
+  gap:
+    clamp(50px, 8vw, 125px);
+}
+
+.chapter-aside {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  margin-bottom: 80px;
+
+  align-items: flex-start;
+
+  gap: 28px;
 }
 
-.metin-blogu h2 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  color: #fff;
-  margin-bottom: 20px;
-  border-left: 3px solid #fff;
-  padding-left: 15px;
+.chapter-number {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.15em;
+
+  color: var(--text-muted);
 }
 
-.metin-blogu p {
-  color: #ccc;
-  line-height: 1.8;
-  font-size: clamp(1.05rem, 2vw, 1.15rem);
-  text-align: left; /* Mobilde 'justify' bazen çirkin boşluklar bırakır, sola yasladık */
+.chapter-year {
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.2rem, 4vw, 4rem);
+
+  line-height: 1;
+
+  letter-spacing: 0.04em;
+
+  color:
+    rgba(180, 154, 106, 0.55);
 }
 
-/* Kartlar Bölümü */
-.ozet-kartlar-alani {
+
+/* BAŞLIK */
+
+.chapter-content {
+  max-width: 930px;
+}
+
+.chapter-content h2 {
+  margin-top: 17px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3.2rem, 6.5vw, 6.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.045em;
+
+  color: var(--text);
+}
+
+.chapter-content h2 span {
+  color: var(--text-muted);
+}
+
+
+/* PARAGRAFLAR */
+
+.chapter-text {
+  max-width: 810px;
+
+  margin-top:
+    clamp(50px, 6vw, 85px);
+
+  margin-left:
+    clamp(0px, 8vw, 130px);
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Mobilde kartlar genişlesin */
-  gap: 20px;
-  margin-top: 60px;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap:
+    30px
+    clamp(40px, 6vw, 80px);
 }
 
-.bilgi-karti {
-  background-color: #111;
-  padding: 25px;
-  border-radius: 15px;
+.chapter-text p {
+  font-size: 0.98rem;
+
+  line-height: 1.9;
+
+  color: var(--text-soft);
+}
+
+.chapter-text p:first-child {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.65rem, 2.3vw, 2.2rem);
+
+  line-height: 1.45;
+
+  color: var(--text);
+}
+
+.chapter-text strong {
+  font-weight: 500;
+
+  color: var(--accent);
+}
+
+.chapter-text-large {
+  grid-template-columns: 1fr;
+}
+
+.chapter-text-large p {
+  max-width: 700px;
+}
+
+
+/* =========================
+   STATEMENT
+========================= */
+
+.life-statement {
+  padding:
+    clamp(75px, 10vw, 135px)
+    0;
+
+  background: var(--accent);
+
+  color: #11100e;
+}
+
+.life-statement .life-container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(30px, 1fr)
+    auto
+    minmax(30px, 1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(25px, 5vw, 70px);
+}
+
+.statement-line {
+  height: 1px;
+
+  background:
+    rgba(13, 13, 12, 0.3);
+}
+
+.life-statement p {
+  max-width: 840px;
+
   text-align: center;
-  border: 1px solid #222;
-  transition: 0.3s ease;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.2rem, 4.4vw, 4.5rem);
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+  letter-spacing: -0.03em;
 }
 
-.bilgi-karti:hover {
-  border-color: #444;
-  transform: translateY(-5px);
-}
+.life-statement p span {
+  font-style: italic;
 
-.kart-etiketi {
-  color: #888;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  display: block;
-}
-
-.kart-cizgisi {
-  border: none;
-  border-top: 1px solid #333;
-  width: 40%;
-  margin: 15px auto;
-}
-
-.bilgi-karti p {
-  color: #fff;
-  font-size: 1.1rem;
   font-weight: 500;
 }
 
-/* Dış Bağlantılar */
-.dis-baglantilar-alani {
-  margin-top: 80px;
-  padding-top: 40px;
-  border-top: 1px solid #222;
-  text-align: center;
+
+/* =========================
+   FACTS
+========================= */
+
+.life-facts {
+  padding:
+    clamp(105px, 13vw, 180px)
+    0;
+
+  border-bottom: 1px solid var(--line);
 }
 
-.dis-baglantilar-alani h3 {
-  color: #555;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
+.facts-header h2 {
+  max-width: 850px;
+
+  margin-top: 18px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(3rem, 6vw, 6rem);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
 }
 
-.link-listesi {
+.facts-header h2 span {
+  color: var(--text-muted);
+}
+
+.facts-grid {
+  margin-top:
+    clamp(60px, 8vw, 110px);
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+.fact-item {
+  min-height: 290px;
+
+  padding: 30px;
+
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  border-right: 1px solid var(--line);
+
+  transition:
+    background 0.3s ease;
+}
+
+.fact-item:last-child {
+  border-right: 0;
+}
+
+.fact-item:hover {
+  background: var(--accent-soft);
+}
+
+.fact-index {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
+}
+
+.fact-label {
+  margin-top: auto;
+
+  margin-bottom: 18px;
+
+  font-size: 0.62rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+
+  color: var(--accent);
+}
+
+.fact-item strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.7rem, 2.6vw, 2.5rem);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   SOURCES
+========================= */
+
+.life-sources {
+  padding:
+    clamp(105px, 13vw, 175px)
+    0;
+
+  background:
+    var(--surface);
+}
+
+.sources-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.7fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(65px, 10vw, 155px);
+}
+
+.sources-title {
+  display: grid;
+
+  grid-template-columns:
+    50px
+    1fr;
+
+  gap: 25px;
+}
+
+.sources-title h2 {
+  margin-top: 16px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.8rem, 5vw, 5rem);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+.sources-title h2 span {
+  color: var(--text-muted);
+}
+
+
+/* SOURCE LINKS */
+
+.sources-list {
+  border-top: 1px solid var(--line);
+}
+
+.source-item {
+  min-height: 135px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    1fr
+    auto;
+
   align-items: center;
+
+  gap: 30px;
+
+  padding: 25px 8px;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    background 0.25s ease,
+    padding 0.25s ease;
 }
 
-.dis-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 12px 20px;
-  background-color: #0a0a0a;
-  border: 1px solid #222;
-  border-radius: 30px;
-  transition: 0.3s ease;
-  width: 100%; /* Mobilde linkler daha kolay tıklanır */
-  max-width: 450px;
+.source-item:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  background: var(--accent-soft);
 }
 
-.dis-link:hover {
-  background-color: #fff;
-  color: #000;
-  border-color: #fff;
+.source-item > div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  color: var(--text-muted);
 }
 
-/* MEDIA QUERIES */
+.source-item p {
+  font-size: 0.65rem;
 
-@media (max-width: 768px) {
-  .hakkinda-dis-kutu {
-    width: 92%;
-    margin: 20px auto;
-  }
-  
-  .hakkinda-ust-alan {
-    margin-bottom: 40px;
+  letter-spacing: 0.1em;
+
+  color: var(--accent);
+}
+
+.source-item strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(1.3rem, 2vw, 1.8rem);
+
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.source-arrow {
+  font-size: 1.25rem;
+
+  color: var(--accent);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.source-item:hover .source-arrow {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* =========================
+   NEXT PAGE
+========================= */
+
+.life-next {
+  padding:
+    clamp(90px, 12vw, 155px)
+    0;
+
+  border-top: 1px solid var(--line);
+}
+
+.life-next-link {
+  margin-top: 28px;
+
+  padding:
+    35px
+    8px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    auto;
+
+  align-items: center;
+
+  gap: 40px;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease;
+}
+
+.life-next-link:hover {
+  padding-left: 24px;
+  padding-right: 24px;
+
+  background: var(--accent-soft);
+}
+
+.life-next-link > span {
+  font-size: 0.72rem;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+}
+
+.life-next-link strong {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(2.4rem, 5vw, 5rem);
+
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+.life-next-link i {
+  font-size: 1.7rem;
+
+  font-style: normal;
+
+  color: var(--accent);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.life-next-link:hover i {
+  transform: translateX(8px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .life-hero-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
   }
 
-  .icerik-bolumu {
-    gap: 35px;
+  .life-intro {
+    max-width: 530px;
   }
 
-  .metin-blogu p {
-    text-align: left; /* Mobilde daha doğal durur */
+
+  .life-chapter-grid {
+    grid-template-columns:
+      100px
+      1fr;
+
+    gap: 40px;
+  }
+
+  .chapter-text {
+    margin-left: 0;
+  }
+
+
+  .sources-layout {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
   }
 }
 
-@media (max-width: 480px) {
-  .bilgi-karti {
-    padding: 20px;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .life-container {
+    width: calc(100% - 40px);
   }
-  
-  .dis-link {
-    font-size: 0.9rem;
-    padding: 10px 15px;
+
+
+  .life-hero {
+    min-height: auto;
+
+    padding:
+      115px
+      0
+      80px;
+  }
+
+  .life-hero-top {
+    grid-template-columns:
+      40px
+      1fr;
+
+    gap: 14px;
+  }
+
+  .life-title-area h1 {
+    font-size:
+      clamp(4rem, 19vw, 6rem);
+  }
+
+  .life-mini-info {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .life-quote {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .life-chapter-grid {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+  .chapter-aside {
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+
+    padding-bottom: 16px;
+  }
+
+  .chapter-year {
+    writing-mode: initial;
+
+    transform: none;
+
+    font-size: 1rem;
+
+    color: var(--accent);
+  }
+
+  .chapter-content h2 {
+    font-size:
+      clamp(3rem, 15vw, 4.5rem);
+  }
+
+
+  .chapter-text {
+    grid-template-columns: 1fr;
+
+    margin-top: 45px;
+  }
+
+
+  .life-statement .life-container {
+    grid-template-columns: 1fr;
+  }
+
+  .statement-line {
+    width: 55px;
+
+    margin: 0 auto;
+  }
+
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-item {
+    min-height: 200px;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fact-item:last-child {
+    border-bottom: 0;
+  }
+
+
+  .sources-title {
+    grid-template-columns:
+      35px
+      1fr;
+  }
+
+  .source-item {
+    grid-template-columns:
+      1fr
+      auto;
+
+    gap: 20px;
+  }
+
+  .source-item > div {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .life-next-link {
+    grid-template-columns:
+      1fr
+      auto;
+
+    gap: 20px;
+  }
+
+  .life-next-link > span {
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .life-container {
+    width: calc(100% - 32px);
+  }
+
+  .life-title-area h1 {
+    font-size: 3.8rem;
+  }
+
+  .life-quote blockquote {
+    font-size: 2.4rem;
+  }
+
+  .life-next-link strong {
+    font-size: 2.2rem;
   }
 }

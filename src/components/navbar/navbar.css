@@ -1,112 +1,298 @@
-.navbar {
+.site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  background-color: rgba(0, 0, 0, 0.6); /* Biraz daha koyulaştırdık ki mobilde okunabilsin */
-  backdrop-filter: blur(10px);
+  inset: 0 0 auto 0;
+
   z-index: 1000;
-  box-sizing: border-box;
+
+  border-bottom: 1px solid transparent;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 12, 0.78),
+    rgba(13, 13, 12, 0.2)
+  );
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 
-.nav-logo {
-  font-family: 'Georgia', serif;
-  font-size: 1.3rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  z-index: 1001; /* Mobilde logonun üstte kalması için */
+.site-header.scrolled {
+  background: rgba(13, 13, 12, 0.9);
+
+  border-bottom-color: var(--line);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.nav-logo a {
-  text-decoration: none;
-  color: white;
+/* ANA NAVBAR */
+
+.navbar {
+  width: min(100% - 64px, var(--container));
+  height: 88px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 36px;
 }
+
+/* SOL LOGO */
+
+.nav-brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  flex-shrink: 0;
+
+  line-height: 1;
+}
+
+.brand-name {
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    serif;
+
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  color: var(--text);
+}
+
+.brand-years {
+  margin-top: 7px;
+
+  font-size: 0.65rem;
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  color: var(--accent);
+}
+
+/* MENÜ */
 
 .nav-links {
   display: flex;
+  align-items: center;
+
   list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+
+  gap: clamp(18px, 2.2vw, 34px);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-family: 'Georgia', serif;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.7;
-  transition: all 0.3s ease;
+.nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 44px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-soft);
+
+  transition: color 0.25s ease;
 }
 
-.nav-links a:hover {
-  opacity: 1;
+.nav-link::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 100%;
+  bottom: 5px;
+
+  height: 1px;
+
+  background: var(--accent);
+
+  transition: right 0.25s ease;
 }
 
-/* --- HAMBURGER İKONU STİLLERİ --- */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  right: 0;
+}
+
+/* HAMBURGER */
+
 .hamburger {
-  display: none; /* Bilgisayarda gizle */
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent;
+
   cursor: pointer;
-  z-index: 1001;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 5px;
+
+  z-index: 1002;
 }
 
 .bar {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: white;
+
+  width: 23px;
+  height: 1px;
+
+  background: var(--text);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
-/* --- MOBİL UYUMLULUK (992px Altı) --- */
-@media (max-width: 992px) {
+/* TABLET / MOBİL */
+
+@media (max-width: 980px) {
+
   .navbar {
-    padding: 0 30px;
+    width: calc(100% - 40px);
+    height: 78px;
   }
 
   .hamburger {
-    display: block; /* Mobilde göster */
+    display: flex;
   }
 
-  /* Hamburger animasyonu (X şekline dönüşme) */
-  .hamburger.active .bar:nth-child(2) { opacity: 0; }
-  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .hamburger.active .bar:nth-child(1) {
+    transform:
+      translateY(6px)
+      rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform:
+      translateY(-6px)
+      rotate(-45deg);
+  }
 
   .nav-links {
     position: fixed;
-    left: -100%; /* Menüyü ekranın dışında sakla */
-    top: 0;
+
+    inset: 0;
+
+    padding:
+      110px
+      28px
+      48px;
+
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.95);
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    transition: 0.4s;
+
     justify-content: center;
-    gap: 40px;
+    align-items: flex-start;
+
+    gap: 6px;
+
+    background:
+      radial-gradient(
+        circle at 18% 20%,
+        rgba(180, 154, 106, 0.1),
+        transparent 24rem
+      ),
+      rgba(13, 13, 12, 0.985);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
   }
 
   .nav-links.active {
-    left: 0; /* Menüyü içeri kaydır */
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
   }
 
-  .nav-links a {
-    font-size: 1.2rem; /* Mobilde daha büyük tık alanları */
-    opacity: 1;
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 13px 0;
+
+    font-family:
+      'Cormorant Garamond',
+      Georgia,
+      serif;
+
+    font-size:
+      clamp(2rem, 9vw, 3.4rem);
+
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+
+    color: var(--text-soft);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link.active {
+    color: var(--accent);
   }
 }
 
+/* KÜÇÜK TELEFON */
+
 @media (max-width: 480px) {
-  .nav-logo {
-    font-size: 1.1rem; /* Küçük telefonlarda logo taşmasın */
+
+  .navbar {
+    width: calc(100% - 32px);
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .brand-years {
+    font-size: 0.58rem;
   }
 }
