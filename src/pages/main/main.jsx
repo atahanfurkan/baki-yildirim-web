@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./main.css";
-import anaFoto from "../../ilkfoto.JPG";
+
+const anaFoto = "/fotograf-arsivi/anasayfafoto.JPG";
 
 const siirler = [
   {
@@ -132,14 +133,11 @@ const Main = () => {
 
   return (
     <div className="home-page">
-
-      {/* HERO */}
       <section className="home-hero">
         <div className="home-hero-inner">
-
           <div className="hero-copy">
             <p className="hero-eyebrow">
-              HALK OZANI · ŞAİR · FOTOĞRAFÇI
+              ŞAİR · FOTOĞRAFÇI · KÜLTÜR İNSANI
             </p>
 
             <h1 className="hero-title">
@@ -174,20 +172,17 @@ const Main = () => {
             <div className="hero-image-frame">
               <img
                 src={anaFoto}
-                alt="Âşık Baki Yıldırım"
+                alt="Baki Yıldırım"
                 className="hero-image"
               />
 
-              <div className="image-number">
-                01
-              </div>
+              <div className="image-number">01</div>
             </div>
 
             <figcaption>
               Baki Yıldırım'ın kişisel arşivinden
             </figcaption>
           </figure>
-
         </div>
 
         <a href="#hikaye" className="scroll-cue">
@@ -196,18 +191,13 @@ const Main = () => {
         </a>
       </section>
 
-
-      {/* HAYATINDAN */}
       <section className="story-section" id="hikaye">
         <div className="section-inner">
-
           <header className="section-heading">
             <span className="section-number">01</span>
 
             <div>
-              <p className="section-kicker">
-                BİR ÖMÜR
-              </p>
+              <p className="section-kicker">BİR ÖMÜR</p>
 
               <h2>
                 Çukurova'dan
@@ -217,25 +207,26 @@ const Main = () => {
           </header>
 
           <div className="story-content">
-
             <div className="story-lead">
               <p>
-                Şiirleri Türkiye'de birçok gazete ve antolojide
-                yayımlanan Baki Yıldırım, halk edebiyatı
-                geleneğini yaşamı boyunca sürdürdü.
+                Şiirleri Türkiye'de birçok gazete ve
+                antolojide yayımlanan Baki Yıldırım,
+                halk edebiyatı geleneğini yaşamı
+                boyunca sürdürdü.
               </p>
             </div>
 
             <div className="story-details">
               <p>
                 1961 yılında Âşık Veysel'i dinlemesi,
-                şiir yolculuğunun önemli dönüm noktalarından
-                biri oldu.
+                şiir yolculuğunun önemli dönüm
+                noktalarından biri oldu.
               </p>
 
               <p>
                 1999 yılında Ceyhan Şairler ve Ozanlar
-                Derneği'nin kurucu üyeleri arasında yer aldı.
+                Derneği'nin kurucu üyeleri arasında
+                yer aldı.
               </p>
 
               <Link to="/hakkinda" className="text-link">
@@ -243,11 +234,9 @@ const Main = () => {
                 <span>↗</span>
               </Link>
             </div>
-
           </div>
 
           <div className="milestones">
-
             <div className="milestone">
               <strong>1945</strong>
               <span>Doğumu</span>
@@ -267,23 +256,16 @@ const Main = () => {
               <strong>2017</strong>
               <span>Ardında kalan miras</span>
             </div>
-
           </div>
-
         </div>
       </section>
 
-
-      {/* ŞİİR */}
       <section className="poem-section">
         <div className="poem-inner">
-
           <div className="poem-meta">
             <span className="section-number">02</span>
 
-            <p className="section-kicker">
-              DİZELERİNDEN
-            </p>
+            <p className="section-kicker">DİZELERİNDEN</p>
 
             <p className="poem-note">
               Arşivde yer alan şiirlerinden rastgele bir kesit.
@@ -311,19 +293,13 @@ const Main = () => {
               <span>↗</span>
             </Link>
           </div>
-
         </div>
       </section>
 
-
-      {/* KEŞİF */}
       <section className="explore-section">
         <div className="section-inner">
-
           <header className="explore-heading">
-            <p className="section-kicker">
-              ARŞİVİ KEŞFET
-            </p>
+            <p className="section-kicker">ARŞİVİ KEŞFET</p>
 
             <h2>
               Bir ömrün izlerini
@@ -332,14 +308,8 @@ const Main = () => {
           </header>
 
           <div className="explore-links">
-
-            <Link
-              to="/hakkinda"
-              className="explore-item"
-            >
-              <span className="explore-index">
-                01
-              </span>
+            <Link to="/hakkinda" className="explore-item">
+              <span className="explore-index">01</span>
 
               <div>
                 <h3>Hayatı</h3>
@@ -350,86 +320,57 @@ const Main = () => {
                 </p>
               </div>
 
-              <span className="explore-arrow">
-                ↗
-              </span>
+              <span className="explore-arrow">↗</span>
             </Link>
 
-
-            <Link
-              to="/zaman-cizelgesi"
-              className="explore-item"
-            >
-              <span className="explore-index">
-                02
-              </span>
+            <Link to="/zaman-cizelgesi" className="explore-item">
+              <span className="explore-index">02</span>
 
               <div>
                 <h3>Zaman Çizelgesi</h3>
 
                 <p>
-                  Yaşamındaki önemli anları kronolojik
-                  olarak inceleyin.
+                  Yaşamındaki önemli anları
+                  kronolojik olarak inceleyin.
                 </p>
               </div>
 
-              <span className="explore-arrow">
-                ↗
-              </span>
+              <span className="explore-arrow">↗</span>
             </Link>
 
-
-            <Link
-              to="/galeri"
-              className="explore-item"
-            >
-              <span className="explore-index">
-                03
-              </span>
+            <Link to="/galeri" className="explore-item">
+              <span className="explore-index">03</span>
 
               <div>
                 <h3>Eserleri</h3>
 
                 <p>
-                  Şiirleri, kitapları ve arşivde yer alan
-                  çalışmalarını keşfedin.
+                  Şiirleri, kitapları ve arşivde
+                  yer alan çalışmalarını keşfedin.
                 </p>
               </div>
 
-              <span className="explore-arrow">
-                ↗
-              </span>
+              <span className="explore-arrow">↗</span>
             </Link>
 
-
-            <Link
-              to="/fotograf-arsivi"
-              className="explore-item"
-            >
-              <span className="explore-index">
-                04
-              </span>
+            <Link to="/fotograf-arsivi" className="explore-item">
+              <span className="explore-index">04</span>
 
               <div>
                 <h3>Fotoğraf Arşivi</h3>
 
                 <p>
                   Aile albümünden günümüze ulaşan
-                  orijinal ve restore edilmiş fotoğrafları
-                  karşılaştırın.
+                  orijinal ve restore edilmiş
+                  fotoğrafları karşılaştırın.
                 </p>
               </div>
 
-              <span className="explore-arrow">
-                ↗
-              </span>
+              <span className="explore-arrow">↗</span>
             </Link>
-
           </div>
-
         </div>
       </section>
-
     </div>
   );
 };

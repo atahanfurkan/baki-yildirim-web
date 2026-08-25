@@ -31,7 +31,7 @@ const Hakkinda = () => {
               <p className="life-intro-text">
                 1945 yılında Ceyhan'da başlayan,
                 şiir, fotoğraf ve Anadolu'nun
-                ozanlık geleneğiyle şekillenen
+                kültürel birikimiyle şekillenen
                 bir yaşam hikâyesi.
               </p>
 
@@ -88,12 +88,12 @@ const Hakkinda = () => {
               </h2>
 
               <div className="chapter-text">
+
                 <p>
                   1945 yılında Ceyhan’da tek odalı bir
                   gecekonduda başlayan bu serüven,
-                  Anadolu'nun kadim ozanlık geleneğiyle
-                  modern sanatın birleştiği bir ömre
-                  dönüştü.
+                  Anadolu kültürüyle sanatın birleştiği
+                  bir ömre dönüştü.
                 </p>
 
                 <p>
@@ -117,6 +117,7 @@ const Hakkinda = () => {
                   diyerek reddetmiş ve hayatını sanatın
                   inceliklerine adamıştır.
                 </p>
+
               </div>
 
             </article>
@@ -155,12 +156,13 @@ const Hakkinda = () => {
               </h2>
 
               <div className="chapter-text chapter-text-large">
+
                 <p>
                   1961 yılında bir kahvehanede
                   <strong> Âşık Veysel</strong> ile
                   yollarının kesişmesi, Baki Yıldırım'ın
-                  ruhundaki ozanlık ateşini
-                  alevlendirmiştir.
+                  şiire olan ilgisini daha da
+                  güçlendirmiştir.
                 </p>
 
                 <p>
@@ -168,9 +170,10 @@ const Hakkinda = () => {
                   duruşu ve dökülen her mısra,
                   Baki Yıldırım'ın kalemine rehberlik
                   etmiş; onu Anadolu'nun saf, milli ve
-                  samimi sesine kopmaz bağlarla
+                  samimi anlatımına kopmaz bağlarla
                   bağlamıştır.
                 </p>
+
               </div>
 
             </article>
@@ -226,9 +229,10 @@ const Hakkinda = () => {
               </h2>
 
               <div className="chapter-text">
+
                 <p>
-                  Onu diğer halk ozanlarından ayıran en
-                  belirgin yönü, profesyonel
+                  Sanat yaşamındaki en belirgin
+                  yönlerden biri profesyonel
                   fotoğrafçılık kimliğidir.
                 </p>
 
@@ -244,6 +248,7 @@ const Hakkinda = () => {
                   ayrıntılarını yakalamış, bu ayrıntıları
                   mısralarında nakış gibi işlemiştir.
                 </p>
+
               </div>
 
             </article>
@@ -259,6 +264,7 @@ const Hakkinda = () => {
         <div className="life-container">
 
           <div className="facts-header">
+
             <p className="chapter-kicker">
               ARŞİV NOTLARI
             </p>
@@ -267,56 +273,66 @@ const Hakkinda = () => {
               Bir bakışta
               <span> Baki Yıldırım</span>
             </h2>
+
           </div>
+
 
           <div className="facts-grid">
 
             <div className="fact-item">
+
               <span className="fact-index">
                 01
               </span>
 
               <span className="fact-label">
-                Edebi Tür
+                Edebi Alan
               </span>
 
               <strong>
-                Halk Şiiri
+                Şiir
                 <br />
-                & Güzelleme
+                & Edebiyat
               </strong>
+
             </div>
 
+
             <div className="fact-item">
+
               <span className="fact-index">
                 02
               </span>
 
               <span className="fact-label">
-                Sanat Dalı
+                Sanat Alanı
               </span>
 
               <strong>
                 Fotoğrafçılık
                 <br />
-                & Ozanlık
+                & Şiir
               </strong>
+
             </div>
 
+
             <div className="fact-item">
+
               <span className="fact-index">
                 03
               </span>
 
               <span className="fact-label">
-                Unvan
+                Kültürel Çalışma
               </span>
 
               <strong>
-                T.C. Kültür Bakanlığı
+                Ceyhan Şairler
                 <br />
-                Halk Ozanı
+                ve Ozanlar Derneği
               </strong>
+
             </div>
 
           </div>
@@ -332,11 +348,13 @@ const Hakkinda = () => {
           <div className="sources-layout">
 
             <div className="sources-title">
+
               <span className="life-page-number">
                 04
               </span>
 
               <div>
+
                 <p className="chapter-kicker">
                   KAYNAKLAR
                 </p>
@@ -345,7 +363,9 @@ const Hakkinda = () => {
                   Arşiv ve
                   <span> biyografi.</span>
                 </h2>
+
               </div>
+
             </div>
 
 

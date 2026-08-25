@@ -39,6 +39,7 @@ const Footer = () => {
           <div className="footer-navigation">
 
             <div className="footer-column">
+
               <span className="footer-column-title">
                 SAYFALAR
               </span>
@@ -76,6 +77,7 @@ const Footer = () => {
                 </Link>
 
               </nav>
+
             </div>
 
 
@@ -86,8 +88,9 @@ const Footer = () => {
               </span>
 
               <p>
-                Baki Yıldırım'a ait fotoğraf, belge,
-                video veya bir anınızı paylaşabilirsiniz.
+                Arşive katkı sağlamak için fotoğraf,
+                belge, video veya anılarınızı
+                paylaşabilirsiniz.
               </p>
 
               <a href="mailto:atahanfrkn@gmail.com">

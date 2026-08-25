@@ -79,6 +79,82 @@ const arsivKayitlari = [
     orijinal: "/fotograf-arsivi/1957.09 .jpg",
     restore: "/fotograf-arsivi/1957.09 (3).png",
   },
+  {
+    id: 11,
+    tarih: "1958.05",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1958.05 ___2 bilgi.jpg",
+    restore: "/fotograf-arsivi/1958.05 bilgi.png",
+  },
+  {
+    id: 12,
+    tarih: "1958.08",
+    baslik: "Müzeyyen Yıldırım",
+    orijinal: "/fotograf-arsivi/1958.08 kiraz_.jpg",
+    restore: "/fotograf-arsivi/1958.08 kiraz.jpeg",
+  },
+  {
+    id: 13,
+    tarih: "1959.03",
+    baslik: "Ayşe Nine",
+    orijinal: "/fotograf-arsivi/1959.03 z3.jpg",
+    restore: "/fotograf-arsivi/1959.03 z2_.png",
+  },
+  {
+    id: 14,
+    tarih: "1959.06",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1959.06 4.jpg",
+    restore: "/fotograf-arsivi/1959.06 3.png",
+  },
+  {
+    id: 15,
+    tarih: "1959.06",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1959.06 ev_.jpg",
+    restore: "/fotograf-arsivi/1959.06 ev_____.png",
+  },
+  {
+    id: 16,
+    tarih: "1959.06",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1959.06 para_.jpg",
+    restore: "/fotograf-arsivi/1959.06 para_.png",
+  },
+  {
+    id: 17,
+    tarih: "1959.06",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1959.06 Şeftali_.jpg",
+    restore: "/fotograf-arsivi/1959.06 Şeftali.png",
+  },
+  {
+    id: 18,
+    tarih: "1960.06",
+    baslik: "Aile Arşivi",
+    orijinal:
+      "/fotograf-arsivi/1960.06 IMG_9954 kağıt.JPG",
+    restore:
+      "/fotograf-arsivi/1960.06 __ kağıt.png",
+  },
+  {
+    id: 19,
+    tarih: "1962.03",
+    baslik: "Hatice Yıldırım",
+    orijinal:
+      "/fotograf-arsivi/1962.03 tarama0690_ kırmızı.jpg",
+    restore:
+      "/fotograf-arsivi/1962.03 tarama0690 kırmızı.png",
+  },
+  {
+    id: 20,
+    tarih: "1962.07",
+    baslik: "Aile Arşivi",
+    orijinal:
+      "/fotograf-arsivi/1962.07 kalem__.JPG",
+    restore:
+      "/fotograf-arsivi/1962.07 kalem__.jpeg",
+  },
 ];
 
 const FotografArsivi = () => {
@@ -143,17 +219,17 @@ const FotografArsivi = () => {
               <div className="archive-stats">
 
                 <div>
-                  <strong>10</strong>
-                  <span>Fotoğraf</span>
+                  <strong>{arsivKayitlari.length}</strong>
+                  <span>Kayıt</span>
                 </div>
 
                 <div>
-                  <strong>20</strong>
+                  <strong>{arsivKayitlari.length * 2}</strong>
                   <span>Görüntü</span>
                 </div>
 
                 <div>
-                  <strong>1939 — 1957</strong>
+                  <strong>1939 — 1962</strong>
                   <span>Zaman Aralığı</span>
                 </div>
 
@@ -287,7 +363,6 @@ const FotografArsivi = () => {
       </section>
 
 
-      {/* ARŞİVE KATKI */}
       <section className="archive-contribution">
         <div className="archive-container">
 

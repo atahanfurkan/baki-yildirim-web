@@ -29,7 +29,7 @@ const zamanOlaylari = [
     kategori: "DÖNÜM NOKTASI",
     baslik: "Âşık Veysel Etkisi",
     aciklama:
-      "Bir kahvehanede Âşık Veysel'i masanın üzerindeki sandalyede dinledi. Bu an, onun şiir dünyasındaki en büyük kırılma noktası oldu.",
+      "Bir kahvehanede Âşık Veysel'i masanın üzerindeki sandalyede dinledi. Bu an, onun şiir dünyasındaki en büyük kırılma noktalarından biri oldu.",
     vurgu: true,
   },
   {
@@ -65,7 +65,7 @@ const zamanOlaylari = [
     kategori: "MİRAS",
     baslik: "Ebedi Veda",
     aciklama:
-      "Kültür Bakanlığı tescilli Halk Ozanı unvanıyla, binlerce dize ve tertemiz bir isim bırakarak aramızdan ayrıldı.",
+      "Şiirleri, fotoğrafları ve kültürel çalışmalarıyla ardında büyük bir arşiv ve unutulmayacak bir yaşam hikâyesi bırakarak aramızdan ayrıldı.",
   },
 ];
 
@@ -92,8 +92,9 @@ const Zaman = () => {
             </div>
 
             <div className="timeline-hero-info">
+
               <p>
-                Âşık Baki Yıldırım'ın çocukluğundan
+                Baki Yıldırım'ın çocukluğundan
                 sanat yaşamına, ailesinden kültürel
                 çalışmalarına uzanan 72 yıllık yolculuğu.
               </p>
@@ -103,9 +104,11 @@ const Zaman = () => {
                 <i></i>
                 <strong>2017</strong>
               </div>
+
             </div>
 
           </div>
+
 
           <div className="timeline-big-years">
             <span>1945</span>
@@ -132,32 +135,55 @@ const Zaman = () => {
             {zamanOlaylari.map((olay, index) => (
               <article
                 className={`timeline-row ${
-                  olay.vurgu ? "timeline-row-featured" : ""
+                  olay.vurgu
+                    ? "timeline-row-featured"
+                    : ""
                 }`}
                 key={`${olay.tarih}-${olay.baslik}`}
               >
 
                 <div className="timeline-year">
+
                   <span>
-                    {String(index + 1).padStart(2, "0")}
+                    {String(index + 1).padStart(
+                      2,
+                      "0"
+                    )}
                   </span>
 
-                  <strong>{olay.tarih}</strong>
+                  <strong>
+                    {olay.tarih}
+                  </strong>
+
                 </div>
+
 
                 <div className="timeline-event-title">
-                  <span>{olay.kategori}</span>
-                  <h2>{olay.baslik}</h2>
+
+                  <span>
+                    {olay.kategori}
+                  </span>
+
+                  <h2>
+                    {olay.baslik}
+                  </h2>
+
                 </div>
 
+
                 <div className="timeline-event-description">
-                  <p>{olay.aciklama}</p>
+
+                  <p>
+                    {olay.aciklama}
+                  </p>
 
                   {olay.vurgu && (
                     <span className="timeline-highlight">
-                      Yaşamındaki önemli dönüm noktalarından biri
+                      Yaşamındaki önemli dönüm
+                      noktalarından biri
                     </span>
                   )}
+
                 </div>
 
               </article>
@@ -182,7 +208,9 @@ const Zaman = () => {
             <em> sanatkâr olmak istiyorum.”</em>
           </blockquote>
 
-          <p>— Baki Yıldırım</p>
+          <p>
+            — Baki Yıldırım
+          </p>
 
         </div>
       </section>
@@ -195,27 +223,38 @@ const Zaman = () => {
           <div className="timeline-ending-grid">
 
             <div>
+
               <p className="timeline-ending-kicker">
                 72 YILLIK BİR HİKÂYE
               </p>
 
               <h2>
                 Zaman sona erdi,
-                <span> bıraktığı izler devam ediyor.</span>
+                <span>
+                  {" "}
+                  bıraktığı izler devam ediyor.
+                </span>
               </h2>
+
             </div>
 
+
             <div className="timeline-ending-copy">
+
               <p>
                 Ardında şiirler, fotoğraflar,
                 kültürel çalışmalar ve ailesine kalan
                 büyük bir arşiv bıraktı.
               </p>
 
-              <Link to="/galeri" className="timeline-next-link">
+              <Link
+                to="/galeri"
+                className="timeline-next-link"
+              >
                 Eserlerini Keşfet
                 <span>→</span>
               </Link>
+
             </div>
 
           </div>
