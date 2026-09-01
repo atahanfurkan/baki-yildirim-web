@@ -6,10 +6,8 @@ const arsivKayitlari = [
     id: 1,
     tarih: "1939.04",
     baslik: "Alaaddin Dede & Meryem Nene",
-    orijinal:
-      "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene__.JPG",
-    restore:
-      "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene_ (3).png",
+    orijinal: "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene__.JPG",
+    restore: "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene_ (3).png",
   },
   {
     id: 2,
@@ -36,8 +34,7 @@ const arsivKayitlari = [
     id: 5,
     tarih: "1947.03",
     baslik: "Şevket Yıldırım",
-    orijinal:
-      "/fotograf-arsivi/1947.03 tarama0189 (2).jpg",
+    orijinal: "/fotograf-arsivi/1947.03 tarama0189 (2).jpg",
     restore: "/fotograf-arsivi/1947.03 (2).jpeg",
   },
   {
@@ -45,25 +42,21 @@ const arsivKayitlari = [
     tarih: "1947.07.24",
     baslik: "Aile Arşivi",
     orijinal: "/fotograf-arsivi/1947.07.24 .jpg",
-    restore:
-      "/fotograf-arsivi/1947.07.24 - Kopya-_ (3)_.png",
+    restore: "/fotograf-arsivi/1947.07.24 - Kopya-_ (3)_.png",
   },
   {
     id: 7,
     tarih: "1955.02",
     baslik: "Şevket Yıldırım",
-    orijinal:
-      "/fotograf-arsivi/1955.02 Adsızdddddd.jpg",
-    restore:
-      "/fotograf-arsivi/1955.02 Adsızdddddd (3).jpeg",
+    orijinal: "/fotograf-arsivi/1955.02 Adsızdddddd.jpg",
+    restore: "/fotograf-arsivi/1955.02 Adsızdddddd (3).jpeg",
   },
   {
     id: 8,
     tarih: "1956.06",
     baslik: "Aile Arşivi",
     orijinal: "/fotograf-arsivi/1956.06 IMG_9682.JPG",
-    restore:
-      "/fotograf-arsivi/1956.06 IMG_9682 (2)_.png",
+    restore: "/fotograf-arsivi/1956.06 IMG_9682 (2)_.png",
   },
   {
     id: 9,
@@ -132,30 +125,127 @@ const arsivKayitlari = [
     id: 18,
     tarih: "1960.06",
     baslik: "Aile Arşivi",
-    orijinal:
-      "/fotograf-arsivi/1960.06 IMG_9954 kağıt.JPG",
-    restore:
-      "/fotograf-arsivi/1960.06 __ kağıt.png",
+    orijinal: "/fotograf-arsivi/1960.06 IMG_9954 kağıt.JPG",
+    restore: "/fotograf-arsivi/1960.06 __ kağıt.png",
   },
   {
     id: 19,
-    tarih: "1962.03",
-    baslik: "Hatice Yıldırım",
-    orijinal:
-      "/fotograf-arsivi/1962.03 tarama0690_ kırmızı.jpg",
-    restore:
-      "/fotograf-arsivi/1962.03 tarama0690 kırmızı.png",
+    tarih: "1961.05",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1961.05__.jpeg",
+    restore: "/fotograf-arsivi/1961.05_.png",
   },
   {
     id: 20,
+    tarih: "1962.03",
+    baslik: "Hatice Yıldırım",
+    orijinal: "/fotograf-arsivi/1962.03 tarama0690_ kırmızı.jpg",
+    restore: "/fotograf-arsivi/1962.03 tarama0690 kırmızı.png",
+  },
+
+  {
+    id: 21,
     tarih: "1962.07",
     baslik: "Aile Arşivi",
-    orijinal:
-      "/fotograf-arsivi/1962.07 kalem__.JPG",
-    restore:
-      "/fotograf-arsivi/1962.07 kalem__.jpeg",
+    orijinal: "/fotograf-arsivi/1962.07 kalem__.JPG",
+    restore: "/fotograf-arsivi/1962.07 kalem__.jpeg",
+  },
+  {
+    id: 22,
+    tarih: "1962.07",
+    baslik: "Hatice Yıldırım ve Ailesi",
+    orijinal: "/fotograf-arsivi/1962.07 tarama0586_ sarı.jpg",
+    restore: "/fotograf-arsivi/1962.07 tarama0586 sarı.png",
+  },
+  {
+    id: 23,
+    tarih: "1963.01.20",
+    baslik: "Müzeyyen Yıldırım",
+    orijinal: "/fotograf-arsivi/1963.01.20 IMG_9690_.JPG",
+    restore: "/fotograf-arsivi/1963.01.20 IMG_9690.png",
+  },
+  {
+    id: 24,
+    tarih: "1963.02",
+    baslik: "Baki Yıldırım",
+    orijinal: "/fotograf-arsivi/1963.02_.jpg",
+    restore: "/fotograf-arsivi/1963.02.png",
+  },
+  {
+    id: 25,
+    tarih: "1964.02",
+    baslik: "Baki Yıldırım",
+    orijinal: "/fotograf-arsivi/1964.02 Adsızfd_.jpg",
+    restore: "/fotograf-arsivi/1964.02 Adsızfd.png",
+  },
+  {
+    id: 26,
+    tarih: "1964.04",
+    baslik: "Baki Yıldırım",
+    orijinal: "/fotograf-arsivi/1964.04 foto__.JPG",
+    restore: "/fotograf-arsivi/1964.04 foto_.png",
+  },
+  {
+    id: 27,
+    tarih: "1964.04",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1964.04 IMG_9542_.JPG",
+    restore: "/fotograf-arsivi/1964.04 IMG_9542.png",
+  },
+  {
+    id: 28,
+    tarih: "1964.04",
+    baslik: "Aile Arşivi",
+    orijinal: "/fotograf-arsivi/1964.04 kayseri__.jpg",
+    restore: "/fotograf-arsivi/1964.04 kayseri.jpeg",
   },
 ];
+
+const toplamGoruntu = arsivKayitlari.length * 2;
+
+const ArchiveVisual = ({ kayit, tur, onOpen }) => {
+  const orijinalMi = tur === "orijinal";
+
+  const src = orijinalMi
+    ? kayit.orijinal
+    : kayit.restore;
+
+  const etiket = orijinalMi
+    ? "Orijinal"
+    : "Restore Edilmiş";
+
+  const etiketBuyuk = orijinalMi
+    ? "ORİJİNAL"
+    : "RESTORE EDİLMİŞ";
+
+  return (
+    <button
+      type="button"
+      className={`archive-image ${
+        orijinalMi
+          ? "archive-original"
+          : "archive-restored"
+      }`}
+      onClick={() => onOpen(src, etiket, kayit)}
+    >
+      <div className="archive-image-label">
+        <span>{etiketBuyuk}</span>
+        <i>↗</i>
+      </div>
+
+      <div className="archive-image-stage">
+        <img
+          src={src}
+          alt={`${kayit.tarih} tarihli ${
+            orijinalMi
+              ? "orijinal"
+              : "restore edilmiş"
+          } arşiv fotoğrafı`}
+        />
+      </div>
+    </button>
+  );
+};
 
 const FotografArsivi = () => {
   const [lightbox, setLightbox] = useState(null);
@@ -210,6 +300,7 @@ const FotografArsivi = () => {
             </div>
 
             <div className="archive-intro">
+
               <p>
                 Aile arşivinden günümüze ulaşan fotoğrafların
                 orijinal halleri ve restore edilmiş dijital
@@ -224,22 +315,22 @@ const FotografArsivi = () => {
                 </div>
 
                 <div>
-                  <strong>{arsivKayitlari.length * 2}</strong>
+                  <strong>{toplamGoruntu}</strong>
                   <span>Görüntü</span>
                 </div>
 
                 <div>
-                  <strong>1939 — 1962</strong>
+                  <strong>1939 — 1964</strong>
                   <span>Zaman Aralığı</span>
                 </div>
 
               </div>
             </div>
-
           </div>
 
           <div className="archive-hero-note">
             <span>ORİJİNAL</span>
+
             <i></i>
 
             <p>
@@ -248,6 +339,7 @@ const FotografArsivi = () => {
             </p>
 
             <i></i>
+
             <span>RESTORE</span>
           </div>
 
@@ -259,6 +351,7 @@ const FotografArsivi = () => {
         <div className="archive-container">
 
           {arsivKayitlari.map((kayit, index) => (
+
             <article
               className="archive-record"
               key={`${kayit.tarih}-${kayit.id}`}
@@ -282,30 +375,11 @@ const FotografArsivi = () => {
 
               <div className="archive-pair">
 
-                <button
-                  type="button"
-                  className="archive-image archive-original"
-                  onClick={() =>
-                    gorselAc(
-                      kayit.orijinal,
-                      "Orijinal",
-                      kayit
-                    )
-                  }
-                >
-                  <div className="archive-image-label">
-                    <span>ORİJİNAL</span>
-                    <i>↗</i>
-                  </div>
-
-                  <div className="archive-image-stage">
-                    <img
-                      src={kayit.orijinal}
-                      alt={`${kayit.tarih} tarihli orijinal arşiv fotoğrafı`}
-                    />
-                  </div>
-                </button>
-
+                <ArchiveVisual
+                  kayit={kayit}
+                  tur="orijinal"
+                  onOpen={gorselAc}
+                />
 
                 <div className="archive-pair-divider">
                   <span></span>
@@ -313,30 +387,11 @@ const FotografArsivi = () => {
                   <span></span>
                 </div>
 
-
-                <button
-                  type="button"
-                  className="archive-image archive-restored"
-                  onClick={() =>
-                    gorselAc(
-                      kayit.restore,
-                      "Restore Edilmiş",
-                      kayit
-                    )
-                  }
-                >
-                  <div className="archive-image-label">
-                    <span>RESTORE EDİLMİŞ</span>
-                    <i>↗</i>
-                  </div>
-
-                  <div className="archive-image-stage">
-                    <img
-                      src={kayit.restore}
-                      alt={`${kayit.tarih} tarihli restore edilmiş arşiv fotoğrafı`}
-                    />
-                  </div>
-                </button>
+                <ArchiveVisual
+                  kayit={kayit}
+                  tur="restore"
+                  onOpen={gorselAc}
+                />
 
               </div>
 
@@ -357,6 +412,7 @@ const FotografArsivi = () => {
               </footer>
 
             </article>
+
           ))}
 
         </div>
@@ -364,11 +420,13 @@ const FotografArsivi = () => {
 
 
       <section className="archive-contribution">
+
         <div className="archive-container">
 
           <div className="archive-contribution-grid">
 
             <div>
+
               <p className="archive-contribution-kicker">
                 ARŞİVE KATKI
               </p>
@@ -377,7 +435,9 @@ const FotografArsivi = () => {
                 Sizde de bir
                 <span> hatıra olabilir.</span>
               </h2>
+
             </div>
+
 
             <div className="archive-contribution-content">
 
@@ -387,12 +447,16 @@ const FotografArsivi = () => {
               </p>
 
               <a href="mailto:atahanfrkn@gmail.com">
+
                 <div>
                   <span>E-POSTA</span>
-                  <strong>atahanfrkn@gmail.com</strong>
+                  <strong>
+                    atahanfrkn@gmail.com
+                  </strong>
                 </div>
 
                 <i>↗</i>
+
               </a>
 
             </div>
@@ -400,10 +464,12 @@ const FotografArsivi = () => {
           </div>
 
         </div>
+
       </section>
 
 
       <section className="archive-ending">
+
         <div className="archive-container">
 
           <p className="archive-ending-kicker">
@@ -426,13 +492,18 @@ const FotografArsivi = () => {
           </div>
 
         </div>
+
       </section>
 
 
       {lightbox && (
+
         <div
           className="archive-lightbox"
           onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Arşiv görseli önizleme"
         >
 
           <button
@@ -444,29 +515,47 @@ const FotografArsivi = () => {
             ×
           </button>
 
+
           <div
             className="archive-lightbox-inner"
             onClick={(event) => event.stopPropagation()}
           >
 
             <div className="archive-lightbox-meta">
-              <span>{lightbox.etiket}</span>
-              <time>{lightbox.tarih}</time>
+
+              <span>
+                {lightbox.etiket}
+              </span>
+
+              <time>
+                {lightbox.tarih}
+              </time>
+
             </div>
+
 
             <img
               src={lightbox.src}
               alt={`${lightbox.tarih} arşiv görseli`}
             />
 
+
             <div className="archive-lightbox-caption">
-              <p>{lightbox.baslik}</p>
-              <span>ESC ile kapatabilirsiniz</span>
+
+              <p>
+                {lightbox.baslik}
+              </p>
+
+              <span>
+                ESC ile kapatabilirsiniz
+              </span>
+
             </div>
 
           </div>
 
         </div>
+
       )}
 
     </div>
