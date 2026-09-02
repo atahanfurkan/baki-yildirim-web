@@ -1,207 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./fotografArsivi.css";
+import fotografArsiviData from "../../data/fotografArsiviData";
 
-const arsivKayitlari = [
-  {
-    id: 1,
-    tarih: "1939.04",
-    baslik: "Alaaddin Dede & Meryem Nene",
-    orijinal: "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene__.JPG",
-    restore: "/fotograf-arsivi/1939.04 AlaaddinDedeMeryemNene_ (3).png",
-  },
-  {
-    id: 2,
-    tarih: "1941.03",
-    baslik: "Şevket Yıldırım",
-    orijinal: "/fotograf-arsivi/1941.03.jpg",
-    restore: "/fotograf-arsivi/1941.03 (2).jpeg",
-  },
-  {
-    id: 3,
-    tarih: "1941.04",
-    baslik: "Ahmet Yüzgeç",
-    orijinal: "/fotograf-arsivi/1941.04 .jpg",
-    restore: "/fotograf-arsivi/1941.04 (2).jpeg",
-  },
-  {
-    id: 4,
-    tarih: "1941.04",
-    baslik: "Şevket Yıldırım",
-    orijinal: "/fotograf-arsivi/1941.04 IMG_1648.JPG",
-    restore: "/fotograf-arsivi/1941.04 IMG_1648 (2).jpeg",
-  },
-  {
-    id: 5,
-    tarih: "1947.03",
-    baslik: "Şevket Yıldırım",
-    orijinal: "/fotograf-arsivi/1947.03 tarama0189 (2).jpg",
-    restore: "/fotograf-arsivi/1947.03 (2).jpeg",
-  },
-  {
-    id: 6,
-    tarih: "1947.07.24",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1947.07.24 .jpg",
-    restore: "/fotograf-arsivi/1947.07.24 - Kopya-_ (3)_.png",
-  },
-  {
-    id: 7,
-    tarih: "1955.02",
-    baslik: "Şevket Yıldırım",
-    orijinal: "/fotograf-arsivi/1955.02 Adsızdddddd.jpg",
-    restore: "/fotograf-arsivi/1955.02 Adsızdddddd (3).jpeg",
-  },
-  {
-    id: 8,
-    tarih: "1956.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1956.06 IMG_9682.JPG",
-    restore: "/fotograf-arsivi/1956.06 IMG_9682 (2)_.png",
-  },
-  {
-    id: 9,
-    tarih: "1957.05",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1957.05 _ __.jpg",
-    restore: "/fotograf-arsivi/1957.05 _ _ (3)_.png",
-  },
-  {
-    id: 10,
-    tarih: "1957.09",
-    baslik: "Müzeyyen Yıldırım",
-    orijinal: "/fotograf-arsivi/1957.09 .jpg",
-    restore: "/fotograf-arsivi/1957.09 (3).png",
-  },
-  {
-    id: 11,
-    tarih: "1958.05",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1958.05 ___2 bilgi.jpg",
-    restore: "/fotograf-arsivi/1958.05 bilgi.png",
-  },
-  {
-    id: 12,
-    tarih: "1958.08",
-    baslik: "Müzeyyen Yıldırım",
-    orijinal: "/fotograf-arsivi/1958.08 kiraz_.jpg",
-    restore: "/fotograf-arsivi/1958.08 kiraz.jpeg",
-  },
-  {
-    id: 13,
-    tarih: "1959.03",
-    baslik: "Ayşe Nine",
-    orijinal: "/fotograf-arsivi/1959.03 z3.jpg",
-    restore: "/fotograf-arsivi/1959.03 z2_.png",
-  },
-  {
-    id: 14,
-    tarih: "1959.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1959.06 4.jpg",
-    restore: "/fotograf-arsivi/1959.06 3.png",
-  },
-  {
-    id: 15,
-    tarih: "1959.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1959.06 ev_.jpg",
-    restore: "/fotograf-arsivi/1959.06 ev_____.png",
-  },
-  {
-    id: 16,
-    tarih: "1959.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1959.06 para_.jpg",
-    restore: "/fotograf-arsivi/1959.06 para_.png",
-  },
-  {
-    id: 17,
-    tarih: "1959.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1959.06 Şeftali_.jpg",
-    restore: "/fotograf-arsivi/1959.06 Şeftali.png",
-  },
-  {
-    id: 18,
-    tarih: "1960.06",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1960.06 IMG_9954 kağıt.JPG",
-    restore: "/fotograf-arsivi/1960.06 __ kağıt.png",
-  },
-  {
-    id: 19,
-    tarih: "1961.05",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1961.05__.jpeg",
-    restore: "/fotograf-arsivi/1961.05_.png",
-  },
-  {
-    id: 20,
-    tarih: "1962.03",
-    baslik: "Hatice Yıldırım",
-    orijinal: "/fotograf-arsivi/1962.03 tarama0690_ kırmızı.jpg",
-    restore: "/fotograf-arsivi/1962.03 tarama0690 kırmızı.png",
-  },
-
-  {
-    id: 21,
-    tarih: "1962.07",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1962.07 kalem__.JPG",
-    restore: "/fotograf-arsivi/1962.07 kalem__.jpeg",
-  },
-  {
-    id: 22,
-    tarih: "1962.07",
-    baslik: "Hatice Yıldırım ve Ailesi",
-    orijinal: "/fotograf-arsivi/1962.07 tarama0586_ sarı.jpg",
-    restore: "/fotograf-arsivi/1962.07 tarama0586 sarı.png",
-  },
-  {
-    id: 23,
-    tarih: "1963.01.20",
-    baslik: "Müzeyyen Yıldırım",
-    orijinal: "/fotograf-arsivi/1963.01.20 IMG_9690_.JPG",
-    restore: "/fotograf-arsivi/1963.01.20 IMG_9690.png",
-  },
-  {
-    id: 24,
-    tarih: "1963.02",
-    baslik: "Baki Yıldırım",
-    orijinal: "/fotograf-arsivi/1963.02_.jpg",
-    restore: "/fotograf-arsivi/1963.02.png",
-  },
-  {
-    id: 25,
-    tarih: "1964.02",
-    baslik: "Baki Yıldırım",
-    orijinal: "/fotograf-arsivi/1964.02 Adsızfd_.jpg",
-    restore: "/fotograf-arsivi/1964.02 Adsızfd.png",
-  },
-  {
-    id: 26,
-    tarih: "1964.04",
-    baslik: "Baki Yıldırım",
-    orijinal: "/fotograf-arsivi/1964.04 foto__.JPG",
-    restore: "/fotograf-arsivi/1964.04 foto_.png",
-  },
-  {
-    id: 27,
-    tarih: "1964.04",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1964.04 IMG_9542_.JPG",
-    restore: "/fotograf-arsivi/1964.04 IMG_9542.png",
-  },
-  {
-    id: 28,
-    tarih: "1964.04",
-    baslik: "Aile Arşivi",
-    orijinal: "/fotograf-arsivi/1964.04 kayseri__.jpg",
-    restore: "/fotograf-arsivi/1964.04 kayseri.jpeg",
-  },
-];
+const arsivKayitlari = fotografArsiviData;
 
 const toplamGoruntu = arsivKayitlari.length * 2;
+
+// Türkçe karakterleri aramada sorun çıkarmaması için
+const normalizeText = (text = "") => {
+  return text
+    .toLocaleLowerCase("tr-TR")
+    .replace(/ş/g, "s")
+    .replace(/ı/g, "i")
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .trim();
+};
 
 const ArchiveVisual = ({ kayit, tur, onOpen }) => {
   const orijinalMi = tur === "orijinal";
@@ -249,6 +65,7 @@ const ArchiveVisual = ({ kayit, tur, onOpen }) => {
 
 const FotografArsivi = () => {
   const [lightbox, setLightbox] = useState(null);
+  const [arama, setArama] = useState("");
 
   useEffect(() => {
     if (!lightbox) return;
@@ -276,6 +93,27 @@ const FotografArsivi = () => {
       etiket,
       tarih: kayit.tarih,
       baslik: kayit.baslik,
+    });
+  };
+
+  const normalizeArama = normalizeText(arama);
+
+  const filtrelenmisKayitlar = arsivKayitlari.filter((kayit) => {
+    if (!normalizeArama) {
+      return true;
+    }
+
+    return (kayit.etiketler || []).some((etiket) =>
+      normalizeText(etiket).includes(normalizeArama)
+    );
+  });
+
+  const etiketeTikla = (etiket) => {
+    setArama(etiket);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
   };
 
@@ -325,10 +163,13 @@ const FotografArsivi = () => {
                 </div>
 
               </div>
+
             </div>
+
           </div>
 
           <div className="archive-hero-note">
+
             <span>ORİJİNAL</span>
 
             <i></i>
@@ -341,81 +182,322 @@ const FotografArsivi = () => {
             <i></i>
 
             <span>RESTORE</span>
+
           </div>
 
         </div>
       </section>
 
 
-      <section className="archive-collection">
+      {/* ARAMA */}
+
+      <section
+        style={{
+          borderBottom: "1px solid var(--line)",
+          padding: "55px 0",
+        }}
+      >
         <div className="archive-container">
 
-          {arsivKayitlari.map((kayit, index) => (
+          <div
+            style={{
+              maxWidth: "850px",
+              margin: "0 auto",
+            }}
+          >
 
-            <article
-              className="archive-record"
-              key={`${kayit.tarih}-${kayit.id}`}
+            <p
+              style={{
+                marginBottom: "14px",
+                fontSize: "0.6rem",
+                fontWeight: "600",
+                letterSpacing: "0.2em",
+                color: "var(--accent)",
+              }}
+            >
+              ARŞİVDE ARA
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                borderBottom: "1px solid var(--line)",
+              }}
             >
 
-              <header className="archive-record-header">
+              <input
+                type="text"
+                value={arama}
+                onChange={(event) => setArama(event.target.value)}
+                placeholder="Bir isim ara..."
+                aria-label="Fotoğraf arşivinde ara"
+                style={{
+                  width: "100%",
+                  padding: "18px 0",
+                  border: "none",
+                  outline: "none",
+                  background: "transparent",
+                  color: "var(--text)",
+                  fontFamily:
+                    '"Cormorant Garamond", Georgia, serif',
+                  fontSize: "clamp(1.6rem, 3vw, 2.5rem)",
+                }}
+              />
 
-                <span className="archive-record-number">
-                  {String(index + 1).padStart(2, "0")}
+              {arama && (
+                <button
+                  type="button"
+                  onClick={() => setArama("")}
+                  style={{
+                    border: "none",
+                    background: "transparent",
+                    color: "var(--text-muted)",
+                    fontSize: "1.7rem",
+                    cursor: "pointer",
+                    padding: "10px",
+                  }}
+                  aria-label="Aramayı temizle"
+                >
+                  ×
+                </button>
+              )}
+
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "20px",
+                marginTop: "13px",
+              }}
+            >
+
+              <span
+                style={{
+                  fontSize: "0.65rem",
+                  color: "var(--text-muted)",
+                }}
+              >
+                Kişi adına göre arama yapabilirsiniz.
+              </span>
+
+              {arama && (
+                <span
+                  style={{
+                    fontSize: "0.65rem",
+                    color: "var(--accent)",
+                  }}
+                >
+                  {filtrelenmisKayitlar.length} kayıt bulundu
                 </span>
+              )}
 
-                <div className="archive-record-title">
-                  <p>AİLE ARŞİVİ</p>
-                  <h2>{kayit.baslik}</h2>
-                </div>
+            </div>
 
-                <time>{kayit.tarih}</time>
-
-              </header>
-
-
-              <div className="archive-pair">
-
-                <ArchiveVisual
-                  kayit={kayit}
-                  tur="orijinal"
-                  onOpen={gorselAc}
-                />
-
-                <div className="archive-pair-divider">
-                  <span></span>
-                  <i>→</i>
-                  <span></span>
-                </div>
-
-                <ArchiveVisual
-                  kayit={kayit}
-                  tur="restore"
-                  onOpen={gorselAc}
-                />
-
-              </div>
-
-
-              <footer className="archive-record-footer">
-
-                <span>
-                  {String(index + 1).padStart(2, "0")}
-                  {" / "}
-                  {String(arsivKayitlari.length).padStart(2, "0")}
-                </span>
-
-                <p>
-                  Orijinal arşiv görüntüsü ve restore edilmiş
-                  dijital çalışma.
-                </p>
-
-              </footer>
-
-            </article>
-
-          ))}
+          </div>
 
         </div>
+      </section>
+
+
+      {/* FOTOĞRAFLAR */}
+
+      <section className="archive-collection">
+
+        <div className="archive-container">
+
+          {filtrelenmisKayitlar.length > 0 ? (
+
+            filtrelenmisKayitlar.map((kayit, index) => (
+
+              <article
+                className="archive-record"
+                key={`${kayit.tarih}-${kayit.id}`}
+              >
+
+                <header className="archive-record-header">
+
+                  <span className="archive-record-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="archive-record-title">
+
+                    <p>AİLE ARŞİVİ</p>
+
+                    <h2>
+                      {kayit.baslik}
+                    </h2>
+
+                  </div>
+
+                  <time>
+                    {kayit.tarih}
+                  </time>
+
+                </header>
+
+
+                <div className="archive-pair">
+
+                  <ArchiveVisual
+                    kayit={kayit}
+                    tur="orijinal"
+                    onOpen={gorselAc}
+                  />
+
+                  <div className="archive-pair-divider">
+                    <span></span>
+                    <i>→</i>
+                    <span></span>
+                  </div>
+
+                  <ArchiveVisual
+                    kayit={kayit}
+                    tur="restore"
+                    onOpen={gorselAc}
+                  />
+
+                </div>
+
+
+                {/* ETİKETLER */}
+
+                {kayit.etiketler &&
+                  kayit.etiketler.length > 0 && (
+
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        alignItems: "center",
+                        gap: "10px",
+                        marginTop: "24px",
+                        paddingTop: "20px",
+                        borderTop: "1px solid var(--line)",
+                      }}
+                    >
+
+                      <span
+                        style={{
+                          marginRight: "8px",
+                          fontSize: "0.55rem",
+                          fontWeight: "600",
+                          letterSpacing: "0.17em",
+                          color: "var(--text-muted)",
+                        }}
+                      >
+                        ETİKETLER
+                      </span>
+
+                      {kayit.etiketler.map((etiket) => (
+
+                        <button
+                          type="button"
+                          key={etiket}
+                          onClick={() => etiketeTikla(etiket)}
+                          style={{
+                            padding: "8px 14px",
+                            border:
+                              "1px solid rgba(180, 154, 106, 0.3)",
+                            background:
+                              normalizeText(arama) ===
+                              normalizeText(etiket)
+                                ? "rgba(180, 154, 106, 0.14)"
+                                : "transparent",
+                            color: "var(--accent)",
+                            fontSize: "0.7rem",
+                            cursor: "pointer",
+                            transition: "all 0.2s ease",
+                          }}
+                        >
+                          {etiket}
+                        </button>
+
+                      ))}
+
+                    </div>
+
+                  )}
+
+
+                <footer className="archive-record-footer">
+
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                    {" / "}
+                    {String(filtrelenmisKayitlar.length).padStart(
+                      2,
+                      "0"
+                    )}
+                  </span>
+
+                  <p>
+                    Orijinal arşiv görüntüsü ve restore edilmiş
+                    dijital çalışma.
+                  </p>
+
+                </footer>
+
+              </article>
+
+            ))
+
+          ) : (
+
+            <div
+              style={{
+                padding: "120px 0",
+                textAlign: "center",
+              }}
+            >
+
+              <p
+                style={{
+                  marginBottom: "15px",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.2em",
+                  color: "var(--accent)",
+                }}
+              >
+                ARAMA SONUCU
+              </p>
+
+              <h2
+                style={{
+                  fontFamily:
+                    '"Cormorant Garamond", Georgia, serif',
+                  fontSize: "clamp(2.5rem, 5vw, 5rem)",
+                  fontWeight: "500",
+                  color: "var(--text)",
+                }}
+              >
+                Eşleşen fotoğraf bulunamadı.
+              </h2>
+
+              <button
+                type="button"
+                onClick={() => setArama("")}
+                style={{
+                  marginTop: "30px",
+                  padding: "12px 22px",
+                  border: "1px solid var(--line)",
+                  background: "transparent",
+                  color: "var(--accent)",
+                  cursor: "pointer",
+                }}
+              >
+                Tüm arşivi göster
+              </button>
+
+            </div>
+
+          )}
+
+        </div>
+
       </section>
 
 
@@ -449,10 +531,15 @@ const FotografArsivi = () => {
               <a href="mailto:atahanfrkn@gmail.com">
 
                 <div>
-                  <span>E-POSTA</span>
+
+                  <span>
+                    E-POSTA
+                  </span>
+
                   <strong>
                     atahanfrkn@gmail.com
                   </strong>
+
                 </div>
 
                 <i>↗</i>
@@ -480,7 +567,10 @@ const FotografArsivi = () => {
 
             <h2>
               Fotoğraflar eskir,
-              <span> hatıralar yaşamaya devam eder.</span>
+              <span>
+                {" "}
+                hatıralar yaşamaya devam eder.
+              </span>
             </h2>
 
             <p>
