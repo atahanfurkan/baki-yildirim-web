@@ -4,6 +4,13 @@ import fotografArsiviData from "../../data/fotografArsiviData";
 
 const arsivKayitlari = fotografArsiviData;
 
+// Zaman aralığı kayıtlardaki tarihlerden otomatik hesaplanır
+const yillar = arsivKayitlari.map((kayit) =>
+  parseInt(kayit.tarih, 10)
+);
+const ilkYil = Math.min(...yillar);
+const sonYil = Math.max(...yillar);
+
 const toplamGoruntu = arsivKayitlari.length * 2;
 
 // Türkçe karakterleri aramada sorun çıkarmaması için
@@ -158,7 +165,7 @@ const FotografArsivi = () => {
                 </div>
 
                 <div>
-                  <strong>1939 — 1964</strong>
+                  <strong>{ilkYil} — {sonYil}</strong>
                   <span>Zaman Aralığı</span>
                 </div>
 
